@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cybersecurity — Darshak Kanani</title>
+  <meta name="description" content="Cybersecurity projects, bug hunting, certifications and roadmap by Darshak Kanani."/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Header (same nav) -->
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="index.html"><span class="logo">DK</span><span class="brand-text">Darshak</span></a>
+      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="ai.html">AI</a></li>
+          <li><a href="blockchain.html">Blockchain</a></li>
+          <li><a href="startups.html">Startups</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <input id="site-search" class="site-search" type="search" placeholder="Search (press /)" aria-label="Search">
+        <button id="theme-toggle" class="btn small" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="cyber-overview" class="section container">
+      <div class="section-header">
+        <div>
+          <h1>Cybersecurity</h1>
+          <p class="muted">Achievements, projects, bug hunting, certifications, tools and roadmap.</p>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="chips filters" role="toolbar" aria-label="Filter projects">
+        <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="bash">Bash</button>
+        <button class="chip" data-filter="siem">SIEM</button>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+
+          <article class="panel timeline">
+            <h3>Goals</h3>
+            <ol>
+              <li><strong>December 2025</strong> — CompTIA Security+</li>
+              <li><strong>June 2026</strong> — OSCP (Offensive Security Certified Professional)</li>
+              <li><strong>December 2026</strong> — Mobile App Pentesting</li>
+            </ol>
+          </article>
+
+          <article class="panel">
+            <h3>Labs</h3>
+            <ul class="map-list">
+              <h4>TryHackMe</h4>
+              <p>
+                  - Intermediate and Advanced Rooms
+              </p>
+              <h4>HackTheBox</h4>
+              <p>
+                  - Inter
+              </p>
+              <h4>Portswigger</h4>
+              <p>
+                  - Challenge Labs
+              </p>
+            </ul>
+          </article>
+          
+          <article class="panel">
+            <h3>Certifications</h3>
+            <ul class="map-list">
+              <li>CEH (Certified Ethical Hacker)</li>
+              <li>Cisco Endpoint Security</li>
+              <li>OSCP (Offensive Security Certified Professional) => Pending</li>
+              <li>CompTIA Security+ => Pending</li> 
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Bug Hunting</h3>
+            <p class="muted">Platforms: HackerOne, Bugcrowd. Public writeups & methodology are linked below (add real links later).</p>
+            <div class="accordion" id="bug-accordion">
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">IDOR writeup — summary & remediation</button>
+                <div class="accordion-content">
+                  <p>Found IDOR in profile endpoint allowing enumeration. Added server-side ownership checks and randomized identifiers.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">Path Traversal via archives — approach</button>
+                <div class="accordion-content">
+                  <p>Validated and sanitized extracted file paths. Used safe unzip libs with directory whitelisting.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">Symlink Traversal — lab reproduction</button>
+                <div class="accordion-content">
+                  <p>Controlled symlink creation to escape extraction directory; mitigation via symlink resolution and base path enforcement.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+              <article class="card project-card" data-title="Detection Engineering" data-tags="siem,blue-team" data-desc="Sigma rules & KQL playbooks for SIEM detections." tabindex="0">
+                <h4>Detection Engineering</h4>
+                <p>Sigma rules & KQL playbooks for SIEM detections.</p>
+                <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
+              </article>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Skills</h3>
+            <ul class="map-list">
+              <li>Web: XSS, IDOR, SSRF (beginner)</li>
+              <li>Blue Team: SIEM rules, playbooks</li>
+              <li>Automation: Bash, Python basics</li>
+            </ul>
+          </article>
+
+          <article class="card project-card" data-title="Bash Automation Toolkit" data-tags="bash,automation" data-desc="Automated recon, bulk screenshots, report generation." tabindex="0">
+            <h4>Bash Automation Toolkit</h4>
+            <p>Automated recon, bulk screenshots, report generation.</p>
+            <p class="meta">Bash, cron, curl</p>
+            <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
+          </article>
+          
+          <article class="panel">
+            <h3>Common Commands</h3>
+            <p class="muted">Handy one-liners I use during recon.</p>
+            <div class="code-block" data-title="Recon commands">
+              <pre><code>    nmap -sC -sV -oN scan.txt target.example
+    gau example.com | anew urls.txt
+    cat urls.txt | httpx -mc 200 -o live.txt
+    cat live.txt | waybackurls | anew wayback.txt
+    cat wayback.txt | gau | anew gau.txt
+    cat gau.txt | httpx -mc 200 -o live.txt
+    cat live.txt | gf redirect | anew redirect.txt
+    cat redirect.txt | gf redirect | anew redirect.txt
+    cat redirect.txt | gf redirect | anew redirect.txt
+                        </code></pre>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <article class="panel">
+            <h3>Projects</h3>
+            <div class="cards">
+              <article class="card project-card" data-title="Web App Pentesting" data-tags="web,app" data-desc="DVWA & Juice Shop: XSS, IDOR, SQLi experiments & writeups." tabindex="0">
+                <h4>Beginner Level</h4>
+                    <p>                        
+                        <li><a href="https://github.com/darshakkanani/Honeypot-Setup.git">Honeypot Setup </a></li>
+                        <li><a href="https://github.com/darshakkanani/Password-Cracker.git">Password Cracker</a></li>
+                        <li><a href="https://github.com/darshakkanani/Packet-Sniffer.git">Packet Sniffer</a></li>
+                        <li><a href="https://github.com/darshakkanani/Keylogger.git">Keylogger</a></li>
+                        <li><a href="https://github.com/darshakkanani/Forensic-Analysis.git">Forensic Analysis</a></li>
+                        <li><a href="https://github.com/darshakkanani/Home-Lab-Setup.git">Home Lab Setup</a></li>
+                        <li><a href="https://github.com/darshakkanani/Basic-Cryptography.git">Basic Cryptography</a></li>
+                        <li><a href="https://github.com/darshakkanani/Phishing-Campaign.git">Phishing Campaign</a></li>
+                        <li><a href="https://github.com/darshakkanani/Wi-Fi-Security-Analysis.git">Wi-Fi Security Analysis</a></li>
+                        <li><a href="https://github.com/darshakkanani/Network-Vulnerability-Scanning.git">Network Vulnerability Scanning</a></li>
+                        <li><a href="https://github.com/darshakkanani/Firewall-Rules.git">Firewall Rules</a></li>
+                        <li><a href="https://github.com/darshakkanani/2FA-System.git">2FA System</a></li>
+                        <li><a href="https://github.com/darshakkanani/Secure-Web-App.git">Secure Web App</a></li>
+                        <li><a href="https://github.com/darshakkanani/Snort-IDS.git">Snort IDS</a></li>                      
+                        <li><a href="https://github.com/darshakkanani/Vulnerability-Scanner.git">Vulnerability Scanner</a></li>
+                        <li><a href="https://github.com/darshakkanani/DNS-Spoofer.git">DNS Spoofer</a></li>
+                    </p>
+                  <h4>Intermediate Level</h4>
+                    <p>
+                        <li><a href="https://github.com/darshakkanani/Malware.git">Malware</a></li>
+                        <li><a href="https://github.com/darshakkanani/Antivirus.git">Antivirus</a></li>
+                        <li><a href="https://github.com/darshakkanani/Anomaly-Detection-System.git">Anomaly Detection System</a></li>
+                        <li><a href="https://github.com/darshakkanani/Malware-Reverse-Engineering.git">Malware Reverse Engineering</a></li>
+                        <li><a href="https://github.com/darshakkanani/TLS-Mutual-Authentication.git">TLS Mutual Authentication</a></li>
+                        <li><a href="https://github.com/darshakkanani/Zero-Day-Exploit.git">Zero Day Exploit</a></li>
+                        <li><a href="https://github.com/darshakkanani/Anonymous-Communication.git">Anonymous Communication</a></li>
+                        <li><a href="https://github.com/darshakkanani/Threat-Intelligence-Honeypots.git">Threat Intelligence Honeypots</a></li>
+                        <li><a href="https://github.com/darshakkanani/Password-Cracking-GPU-Cluster.git">Password Cracking GPU Cluster</a></li>
+                        <li><a href="https://github.com/darshakkanani/Malware-Analysis-Sandbox.git">Malware Analysis Sandbox</a></li>
+                        <li><a href="https://github.com/darshakkanani/Full-Disk-Encryption.git">Full Disk Encryption</a></li>
+                        <li><a href="https://github.com/darshakkanani/IDS-IPS-with-Machine-Learning.git">IDS/IPS with Machine Learning</a></li>
+                        <li><a href="https://github.com/darshakkanani/Anonymizing-Routing.git">Anonymizing Routing</a></li>
+                        <li><a href="https://github.com/darshakkanani/Secure-Cryptocurrency-Wallet.git">Secure Cryptocurrency Wallet</a></li>
+                        <li><a href="https://github.com/darshakkanani/Rootkit-Analysis.git">Rootkit Analysis</a></li>
+                        <li><a href="https://github.com/darshakkanani/Dark-Web-Scraper.git">Dark Web Scraper</a></li>
+                        <li><a href="https://github.com/darshakkanani/DDoS-Simulation.git">DDoS Simulation</a></li>
+                        <li><a href="https://github.com/darshakkanani/Secure-Messaging-App.git">Secure Messaging App</a></li>
+                        <li><a href="https://github.com/darshakkanani/PKI-Infrastructure.git">PKI Infrastructure</a></li>
+                    </p>
+                    <h4>Expert Level</h4>
+                    <p>
+                        <li><a href="https://github.com/darshakkanani/Zero-Day-Vulnerability-Research.git">Zero Day Vulnerability Research</a></li>
+                        <li><a href="https://github.com/darshakkanani/Smart-Contract-Auditing.git">Smart Contract Auditing</a></li>
+                        <li><a href="https://github.com/darshakkanani/Custom-Assessment-Tools.git">Custom Assessment Tools</a></li>
+                        <li><a href="https://github.com/darshakkanani/Threat-Detection-with-Machine-Learning.git">Threat Detection with Machine Learning</a></li>
+                        <li><a href="https://github.com/darshakkanani/Firmware-Reverse-Engineering.git">Firmware Reverse Engineering</a></li>
+                        <li><a href="https://github.com/darshakkanani/ICS-Security-Industrial-Control-Systems.git">ICS Security (Industrial Control Systems)</a></li>
+                        <li><a href="https://github.com/darshakkanani/Nation-State-Malware-Analysis.git">Nation State Malware Analysis</a></li>
+                        <li><a href="https://github.com/darshakkanani/Advanced-Firewall.git">Advanced Firewall</a></li>
+                        <li><a href="https://github.com/darshakkanani/IoT-Security-Tools.git">IoT Security Tools</a></li>
+                        <li><a href="https://github.com/darshakkanani/Custom-Cyber-Ranges.git">Custom Cyber Ranges</a></li>
+                        <li><a href="https://github.com/darshakkanani/Malware-Obfuscation.git">Malware Obfuscation</a></li>
+                        <li><a href="https://github.com/darshakkanani/In-Memory-Invasion.git">In-Memory Invasion</a></li>
+                        <li><a href="https://github.com/darshakkanani/Linux-Windows-Kernel-Backdoor.git">Linux/Windows Kernel Backdoor</a></li>
+                        <li><a href="https://github.com/darshakkanani/Side-Channel-Attacks.git">Side Channel Attacks</a></li>
+                        <li><a href="https://github.com/darshakkanani/ARM-x86-Rootkit.git">ARM/x86 Rootkit</a></li>
+                    </p>
+                <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
+              </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Modal -->
+    <div id="cyber-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h4 class="modal-title">Title</h4>
+          <button class="btn small modal-close" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-content">
+          <p class="modal-desc">Description</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — Cybersecurity</p></div></footer>
+
+  <script src="main.js"></script>
+  <script src="cyber.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Startups — Darshak Kanani</title>
+  <meta name="description" content="Herbal beauty startup and GAN-based cybersecurity SaaS."/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav container">
+    <a class="brand" href="index.html">DK Darshak</a>
+    <button id="nav-toggle" class="hamburger"><span></span><span></span><span></span></button>
+    <nav id="primary-nav" class="primary-nav"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cybersecurity.html">Cybersecurity</a></li>
+      <li><a href="ai.html">AI</a></li>
+      <li><a href="blockchain.html">Blockchain</a></li>
+      <li><a class="active" href="startups.html">Startups</a></li>
+    </ul></nav>
+    <div class="nav-actions"><input id="site-search" class="site-search" type="search"><button id="theme-toggle" class="btn small">🌙</button></div>
+  </div></header>
+
+  <main id="main">
+    <section id="startups" class="section container">
+      <div class="section-header">
+        <h1>Startups</h1>
+        <p class="muted">Two ventures: Herbal Beauty Products — and — GAN-based Cybersecurity SaaS.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <article id="startup-herbal" class="panel">
+          <h2>🌿 Herbal Beauty Products</h2>
+          <p><strong>One-liner:</strong> Personalized herbal bath care with AI guidance.</p>
+          <h4>Solution</h4>
+          <ul class="map-list">
+            <li>Herbal powders & shower gels — Neem, Tulsi, Aloe, Palas</li>
+            <li>AI skin analysis & product recommendations</li>
+            <li>Subscription + doctor consultation option</li>
+          </ul>
+
+          <h4>Roadmap</h4>
+          <ol><li>MVP → Pilot → E-commerce app → Doctor network</li></ol>
+
+          <div class="product-showcase">
+            <div class="flip-card">
+              <div class="flip-inner">
+                <div class="flip-front"><img src="assets/images/project1.jpg" alt="Herbal product"></div>
+                <div class="flip-back"><p>Neem powder — antibacterial, great for skin.</p></div>
+              </div>
+            </div>
+            <!-- add more flip-cards -->
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Join Waitlist</a>
+            <a class="btn" href="#">Survey (coming)</a>
+          </div>
+        </article>
+
+        <article id="startup-gan" class="panel">
+          <h2>🛡️ GAN-based Cybersecurity SaaS</h2>
+          <p><strong>One-liner:</strong> Dual-AI red/blue simulation to harden defenses.</p>
+          <h4>Architecture (high-level)</h4>
+          <ol>
+            <li>Data Ingest → Attack simulation (attacker GAN)</li>
+            <li>Defense generator (discriminator + policy config)</li>
+            <li>Feedback loop & dashboard</li>
+          </ol>
+          <div class="diagram-gan">
+            <!-- simple SVG diagram -->
+            <svg viewBox="0 0 600 200" class="gan-svg" role="img" aria-label="GAN architecture diagram">
+              <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker></defs>
+              <rect x="20" y="50" width="160" height="90" rx="8" class="svg-box"/><text x="100" y="95" text-anchor="middle" class="svg-text">Data Ingest</text>
+              <rect x="220" y="20" width="160" height="60" rx="8" class="svg-box"/><text x="300" y="55" text-anchor="middle" class="svg-text">Attacker GAN</text>
+              <rect x="220" y="120" width="160" height="60" rx="8" class="svg-box"/><text x="300" y="155" text-anchor="middle" class="svg-text">Defender Model</text>
+              <rect x="420" y="60" width="160" height="80" rx="8" class="svg-box"/><text x="500" y="100" text-anchor="middle" class="svg-text">Dashboard & Reports</text>
+              <path d="M180 95 L220 50" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
+              <path d="M180 95 L220 150" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
+              <path d="M380 50 L420 100" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
+              <path d="M380 150 L420 100" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
+            </svg>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Request Demo</a>
+            <a class="btn" href="#">Partner (coming)</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — Startups</p></div></footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/startups.js"></script>
+</body>
+</html>
