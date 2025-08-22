@@ -128,7 +128,7 @@ if(search){
   });
 }
 
-/* Formspree Email Handler */
+/* EmailJS Handler */
 const form = document.getElementById('contact-form');
 if(form){
   const status = document.getElementById('form-status');
@@ -143,7 +143,7 @@ if(form){
     
     const formData = new FormData(form);
     const name = formData.get('name')?.trim();
-    const email = formData.get('_replyto')?.trim();
+    const email = formData.get('email')?.trim();
     const subject = formData.get('subject')?.trim();
     const message = formData.get('message')?.trim();
     
@@ -163,32 +163,52 @@ if(form){
     status.textContent = 'Sending message...';
     status.style.color = '#00d4ff';
     
+    // EmailJS template parameters
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+      to_email: 'darshakkanani444@gmail.com'
+    };
+    
     try {
-      // Send via Formspree
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if(response.ok) {
-        status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-        status.style.color = '#4ade80';
-        form.reset();
-        
-        // Clear status after 5 seconds
-        setTimeout(() => {
-          status.textContent = '';
-        }, 5000);
-      } else {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to send message');
+      // Check if EmailJS is available
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS library not loaded');
       }
+      
+      // Send via EmailJS
+      const response = await emailjs.send(
+        'service_xp43uwv',
+        'template_azpmuzo',
+        templateParams
+      );
+      
+      console.log('Email sent successfully:', response);
+      status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+      status.style.color = '#4ade80';
+      form.reset();
+      
+      // Clear status after 5 seconds
+      setTimeout(() => {
+        status.textContent = '';
+      }, 5000);
+      
     } catch (error) {
-      console.error('Email send error:', error);
-      status.textContent = 'Failed to send message. Please try again.';
+      console.error('EmailJS error:', error);
+      
+      // More detailed error messages
+      let errorMessage = 'Failed to send message. ';
+      if (error.text) {
+        errorMessage += error.text;
+      } else if (error.message) {
+        errorMessage += error.message;
+      } else {
+        errorMessage += 'Please try again.';
+      }
+      
+      status.textContent = errorMessage;
       status.style.color = '#ff6b6b';
     }
   });

@@ -22,9 +22,9 @@
    ```
 
 4. **Get your credentials:**
-   - Service ID: Copy from your service
-   - Template ID: Copy from your template
-   - User ID: Copy from Account > API Keys
+   - Service ID: service_xp43uwv
+   - Template ID: template_azpmuzo
+   - User ID: L5g0IdaxkNDZYA0h9
 
 5. **Update the JavaScript:**
    Replace in `/js/main.js`:

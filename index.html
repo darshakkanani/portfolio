@@ -454,8 +454,7 @@
 
         <div class="contact-grid">
           <div class="contact-form-container">
-            <form id="contact-form" class="contact-form enhanced-form" name="contact" method="POST" netlify novalidate>
-              <input type="hidden" name="form-name" value="contact" />
+            <form id="contact-form" class="contact-form enhanced-form" novalidate>
               
               <div class="form-group">
                 <div class="form-row">
@@ -563,10 +562,18 @@
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
   <footer class="site-footer">
-    <p>© 2025 Darshak Kanani — Built with care.</p>
+    <p> 2025 Darshak Kanani — Built with care.</p>
   </footer>
 
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS immediately after library loads
+    (function(){
+      emailjs.init("L5g0IdaxkNDZYA0h9");
+      console.log('EmailJS initialized with public key');
+    })();
+  </script>
   <script src="js/main.js"></script>
-  <script src="js/resume.js"></script>
 </body>
 </html>
