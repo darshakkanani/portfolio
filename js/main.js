@@ -130,3 +130,270 @@ document.body.addEventListener('mousedown', ()=> document.documentElement.classL
 /* Analytics placeholder hook */
 const hook = document.getElementById('analytics-hook');
 if(hook) hook.textContent = 'analytics placeholder';
+
+/* =========================
+   Live Background Effects
+   ========================= */
+
+/* Create geometric patterns */
+function createGeometricPatterns() {
+  const patternsContainer = document.createElement('div');
+  patternsContainer.className = 'geometric-patterns';
+  document.body.appendChild(patternsContainer);
+
+  const shapes = ['square', 'circle', 'triangle'];
+  const shapeCount = 15;
+
+  for (let i = 0; i < shapeCount; i++) {
+    const shape = document.createElement('div');
+    shape.className = 'geometric-shape';
+    
+    const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
+    const size = 20 + Math.random() * 60;
+    
+    shape.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-delay: ${Math.random() * 20}s;
+      animation-duration: ${20 + Math.random() * 10}s;
+    `;
+
+    if (shapeType === 'circle') {
+      shape.style.borderRadius = '50%';
+    } else if (shapeType === 'triangle') {
+      shape.style.width = '0';
+      shape.style.height = '0';
+      shape.style.borderLeft = `${size/2}px solid transparent`;
+      shape.style.borderRight = `${size/2}px solid transparent`;
+      shape.style.borderBottom = `${size}px solid rgba(255, 255, 255, 0.1)`;
+      shape.style.background = 'transparent';
+    }
+
+    patternsContainer.appendChild(shape);
+  }
+}
+
+/* Create floating particles */
+function createParticles() {
+  const particlesContainer = document.createElement('div');
+  particlesContainer.className = 'particles';
+  document.body.appendChild(particlesContainer);
+
+  const particleCount = 80;
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const size = 1 + Math.random() * 3;
+    particle.style.cssText = `
+      left: ${Math.random() * 100}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-delay: ${Math.random() * 25}s;
+      animation-duration: ${25 + Math.random() * 15}s;
+    `;
+    
+    particlesContainer.appendChild(particle);
+  }
+}
+
+/* Create wave effects */
+function createWaveEffects() {
+  const waveContainer = document.createElement('div');
+  waveContainer.className = 'wave-container';
+  document.body.appendChild(waveContainer);
+
+  for (let i = 0; i < 3; i++) {
+    const wave = document.createElement('div');
+    wave.className = 'wave';
+    wave.style.top = `${i * 33}%`;
+    waveContainer.appendChild(wave);
+  }
+}
+
+/* Create matrix rain effect (canvas-based, non-intrusive) */
+function createMatrixRain() {
+  if (document.getElementById('matrix-canvas')) return; // ensure single instance
+
+  const canvas = document.createElement('canvas');
+  canvas.id = 'matrix-canvas';
+  canvas.style.cssText = 'position:fixed;inset:0;z-index:-3;pointer-events:none;';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  const fontSize = 16;
+  const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let columns, drops, width, height;
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    columns = Math.floor(width / fontSize);
+    drops = new Array(columns).fill(0).map(() => Math.random() * height / fontSize);
+    ctx.font = `${fontSize}px monospace`;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    ctx.fillRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(0,212,255,0.6)';
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+      ctx.fillText(text, x, y);
+      if (y > height && Math.random() > 0.975) drops[i] = 0; else drops[i] += 0.9 + Math.random() * 0.6;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* Interactive background on mouse move */
+function createInteractiveBackground() {
+  let mouseX = 0, mouseY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
+    
+    // Subtle parallax effect on background gradients
+    const before = document.body;
+    if (before) {
+      before.style.setProperty('--mouse-x', mouseX);
+      before.style.setProperty('--mouse-y', mouseY);
+    }
+  });
+}
+
+/* Create premium dust effect */
+function createPremiumDust() {
+  const dustContainer = document.createElement('div');
+  dustContainer.className = 'premium-dust';
+  dustContainer.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+  `;
+  document.body.appendChild(dustContainer);
+
+  // Add subtle dust particles
+  for (let i = 0; i < 40; i++) {
+    const dust = document.createElement('div');
+    dust.style.cssText = `
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      animation: premiumDustFloat ${12 + Math.random() * 8}s infinite linear;
+      animation-delay: ${Math.random() * 12}s;
+    `;
+    dustContainer.appendChild(dust);
+  }
+}
+
+/* Initialize live background */
+document.addEventListener('DOMContentLoaded', () => {
+  // Non-intrusive backgrounds
+  createGeometricPatterns();
+  createParticles();
+  createWaveEffects();
+  createMatrixRain(); // now canvas-based
+  createInteractiveBackground();
+  createPremiumDust();
+  
+  // Add CSS for premium dust animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes premiumDustFloat {
+      0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      90% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-150px) translateX(100px) scale(0);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Performance optimization: pause animations when tab is not visible
+  document.addEventListener('visibilitychange', () => {
+    const particles = document.querySelector('.particles');
+    const matrix = document.querySelector('.matrix-rain');
+    const geometric = document.querySelector('.geometric-patterns');
+    const waves = document.querySelector('.wave-container');
+    const dust = document.querySelector('.premium-dust');
+    
+    if (document.hidden) {
+      particles?.style.setProperty('animation-play-state', 'paused');
+      matrix?.style.setProperty('animation-play-state', 'paused');
+      geometric?.style.setProperty('animation-play-state', 'paused');
+      waves?.style.setProperty('animation-play-state', 'paused');
+      dust?.style.setProperty('animation-play-state', 'paused');
+    } else {
+      particles?.style.setProperty('animation-play-state', 'running');
+      matrix?.style.setProperty('animation-play-state', 'running');
+      geometric?.style.setProperty('animation-play-state', 'running');
+      waves?.style.setProperty('animation-play-state', 'running');
+      dust?.style.setProperty('animation-play-state', 'running');
+    }
+  });
+});
+
+/* Dynamic particle generation on scroll */
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+  
+  // Add extra particles during scroll
+  const particlesContainer = document.querySelector('.particles');
+  if (particlesContainer && Math.random() > 0.5) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const size = 1 + Math.random() * 2;
+    particle.style.cssText = `
+      left: ${Math.random() * 100}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-duration: ${20 + Math.random() * 10}s;
+    `;
+    
+    particlesContainer.appendChild(particle);
+    
+    // Remove particle after animation
+    setTimeout(() => {
+      particle.remove();
+    }, 30000);
+  }
+  
+  scrollTimeout = setTimeout(() => {
+    // Clean up extra particles after scroll stops
+    const particles = document.querySelectorAll('.particle');
+    if (particles.length > 100) {
+      for (let i = 100; i < particles.length; i++) {
+        particles[i].remove();
+      }
+    }
+  }, 1000);
+});

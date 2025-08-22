@@ -1,4 +1,4 @@
-// AI Page Interactive Features
+// Blockchain Page Interactive Features
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll-triggered animations
     initScrollAnimations();
@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize floating elements
     initFloatingElements();
+    
+    // Initialize audit process timeline
+    initAuditTimeline();
     
     // Initialize animated counters
     initAnimatedCounters();
@@ -31,7 +34,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe all animatable elements
-    document.querySelectorAll('.fade-in, .slide-up, .project-card, .research-item').forEach(el => {
+    document.querySelectorAll('.fade-in, .slide-up, .project-card, .research-item, .audit-step').forEach(el => {
         observer.observe(el);
     });
 }
@@ -54,7 +57,7 @@ function initProjectCardInteractions() {
                 height: ${size}px;
                 left: ${x}px;
                 top: ${y}px;
-                background: rgba(0, 212, 255, 0.3);
+                background: rgba(16, 185, 129, 0.3);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s ease-out;
@@ -97,6 +100,26 @@ function initFloatingElements() {
         // Add floating animation with different delays
         element.style.animationDelay = `${index * 0.5}s`;
         element.classList.add('floating');
+    });
+}
+
+function initAuditTimeline() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach((item, index) => {
+        // Add progressive reveal animation
+        item.style.animationDelay = `${index * 0.2}s`;
+        
+        // Add hover interaction
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.borderColor = 'var(--accent)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+        });
     });
 }
 
@@ -204,5 +227,13 @@ style.textContent = `
         transform: translateY(20px);
         transition: all 0.6s ease-out;
     }
+    
+    .audit-step {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.6s ease-out;
+    }
 `;
 document.head.appendChild(style);
+
+

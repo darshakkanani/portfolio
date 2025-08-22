@@ -1,97 +1,385 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Startups — Darshak Kanani</title>
-  <meta name="description" content="Herbal beauty startup and GAN-based cybersecurity SaaS."/>
+  <meta name="description" content="Innovative startup ventures transforming industries through technology and creativity."/>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-su startup-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav container">
-    <a class="brand" href="index.html">DK Darshak</a>
-    <button id="nav-toggle" class="hamburger"><span></span><span></span><span></span></button>
-    <nav id="primary-nav" class="primary-nav"><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cybersecurity.html">Cybersecurity</a></li>
-      <li><a href="ai.html">AI</a></li>
-      <li><a href="blockchain.html">Blockchain</a></li>
-      <li><a class="active" href="startups.html">Startups</a></li>
-    </ul></nav>
-    <div class="nav-actions"><input id="site-search" class="site-search" type="search"><button id="theme-toggle" class="btn small">🌙</button></div>
-  </div></header>
 
-  <main id="main">
-    <section id="startups" class="section container">
-      <div class="section-header">
-        <h1>Startups</h1>
-        <p class="muted">Two ventures: Herbal Beauty Products — and — GAN-based Cybersecurity SaaS.</p>
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo">DK</span><span class="brand-text">Darshak Kanani</span>
+      </a>
+
+      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="ai.html">AI</a></li>
+          <li><a href="blockchain.html">Blockchain</a></li>
+          <li><a class="active" href="startups.html">Startups</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <input id="site-search" class="site-search" type="search" placeholder="Search (press /)" aria-label="Search">
+        <button id="theme-toggle" class="btn small" title="Toggle theme" aria-pressed="false">🌙</button>
       </div>
+    </div>
+  </header>
 
-      <div class="grid grid-2">
-        <article id="startup-herbal" class="panel">
-          <h2>🌿 Herbal Beauty Products</h2>
-          <p><strong>One-liner:</strong> Personalized herbal bath care with AI guidance.</p>
-          <h4>Solution</h4>
-          <ul class="map-list">
-            <li>Herbal powders & shower gels — Neem, Tulsi, Aloe, Palas</li>
-            <li>AI skin analysis & product recommendations</li>
-            <li>Subscription + doctor consultation option</li>
-          </ul>
+  <div class="main-content">
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="startup-hero">
+        <div class="hero-background">
+          <div class="floating-elements">
+            <div class="float-element rocket">🚀</div>
+            <div class="float-element bulb">💡</div>
+            <div class="float-element chart">📈</div>
+            <div class="float-element gear">⚙️</div>
+            <div class="float-element star">⭐</div>
+          </div>
+        </div>
+        
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-in">
+            <span class="badge-icon">🌟</span>
+            <span>Innovation Hub</span>
+          </div>
+          
+          <h1 class="hero-title animate-slide-up">
+            Building the <span class="gradient-text">Future</span><br>
+            One Startup at a Time
+          </h1>
+          
+          <p class="hero-description animate-slide-up delay-1">
+            Transforming bold ideas into market-disrupting products through cutting-edge technology, 
+            strategic execution, and relentless innovation.
+          </p>
+          
+          <div class="hero-metrics animate-slide-up delay-2">
+            <div class="metric">
+              <div class="metric-number" data-count="6">0</div>
+              <div class="metric-label">Active Projects</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="25">0</div>
+              <div class="metric-label">K+ Users Reached</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="3">0</div>
+              <div class="metric-label">Industries</div>
+            </div>
+          </div>
+          
+          <div class="hero-actions animate-slide-up delay-3">
+            <a href="#ventures" class="btn-primary">
+              <span>Explore Ventures</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <a href="#collaboration" class="btn-secondary">
+              <span>Let's Collaborate</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-          <h4>Roadmap</h4>
-          <ol><li>MVP → Pilot → E-commerce app → Doctor network</li></ol>
-
-          <div class="product-showcase">
-            <div class="flip-card">
-              <div class="flip-inner">
-                <div class="flip-front"><img src="assets/images/project1.jpg" alt="Herbal product"></div>
-                <div class="flip-back"><p>Neem powder — antibacterial, great for skin.</p></div>
+      <!-- Ventures Section -->
+      <section id="ventures" class="ventures-section">
+        <div class="section-header">
+          <h2 class="section-title">Current Ventures</h2>
+          <p class="section-subtitle">Innovative solutions across multiple industries</p>
+        </div>
+        
+        <div class="ventures-grid">
+          <!-- Herbal Beauty Venture -->
+          <div class="venture-card beauty-card" data-category="beauty">
+            <div class="card-header">
+              <div class="card-icon beauty-icon">🌿</div>
+              <div class="card-status">
+                <span class="status-badge active">Active Development</span>
               </div>
             </div>
-            <!-- add more flip-cards -->
+            
+            <div class="card-content">
+              <h3 class="card-title">NaturGlow Beauty</h3>
+              <p class="card-description">
+                Revolutionary herbal skincare line combining ancient Ayurvedic wisdom 
+                with modern biotechnology for sustainable beauty solutions.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">Organic Formulations</div>
+                <div class="feature-tag">Sustainable Packaging</div>
+                <div class="feature-tag">Clinical Testing</div>
+                <div class="feature-tag">D2C Platform</div>
+              </div>
+              
+              <div class="card-metrics">
+                <div class="metric-item">
+                  <span class="metric-value">15+</span>
+                  <span class="metric-name">Products</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">5K+</span>
+                  <span class="metric-name">Pre-orders</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">98%</span>
+                  <span class="metric-name">Satisfaction</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Join Waitlist</button>
+              <button class="btn-card secondary">Learn More</button>
+            </div>
+            
+            <div class="card-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+              <span class="progress-text">75% to Launch</span>
+            </div>
           </div>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Join Waitlist</a>
-            <a class="btn" href="#">Survey (coming)</a>
+          <!-- Cybersecurity Venture -->
+          <div class="venture-card cyber-card" data-category="cybersecurity">
+            <div class="card-header">
+              <div class="card-icon cyber-icon">🛡️</div>
+              <div class="card-status">
+                <span class="status-badge beta">Beta Testing</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">SecureAI Shield</h3>
+              <p class="card-description">
+                Next-generation cybersecurity platform powered by Generative AI and 
+                machine learning for proactive threat detection and response.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">AI-Powered Detection</div>
+                <div class="feature-tag">Real-time Response</div>
+                <div class="feature-tag">Zero-day Protection</div>
+                <div class="feature-tag">Cloud Native</div>
+              </div>
+              
+              <div class="card-metrics">
+                <div class="metric-item">
+                  <span class="metric-value">99.9%</span>
+                  <span class="metric-name">Accuracy</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">50+</span>
+                  <span class="metric-name">Enterprise Clients</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">24/7</span>
+                  <span class="metric-name">Monitoring</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Request Demo</button>
+              <button class="btn-card secondary">Early Access</button>
+            </div>
+            
+            <div class="card-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%"></div>
+              </div>
+              <span class="progress-text">90% to Launch</span>
+            </div>
           </div>
-        </article>
 
-        <article id="startup-gan" class="panel">
-          <h2>🛡️ GAN-based Cybersecurity SaaS</h2>
-          <p><strong>One-liner:</strong> Dual-AI red/blue simulation to harden defenses.</p>
-          <h4>Architecture (high-level)</h4>
-          <ol>
-            <li>Data Ingest → Attack simulation (attacker GAN)</li>
-            <li>Defense generator (discriminator + policy config)</li>
-            <li>Feedback loop & dashboard</li>
-          </ol>
-          <div class="diagram-gan">
-            <!-- simple SVG diagram -->
-            <svg viewBox="0 0 600 200" class="gan-svg" role="img" aria-label="GAN architecture diagram">
-              <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker></defs>
-              <rect x="20" y="50" width="160" height="90" rx="8" class="svg-box"/><text x="100" y="95" text-anchor="middle" class="svg-text">Data Ingest</text>
-              <rect x="220" y="20" width="160" height="60" rx="8" class="svg-box"/><text x="300" y="55" text-anchor="middle" class="svg-text">Attacker GAN</text>
-              <rect x="220" y="120" width="160" height="60" rx="8" class="svg-box"/><text x="300" y="155" text-anchor="middle" class="svg-text">Defender Model</text>
-              <rect x="420" y="60" width="160" height="80" rx="8" class="svg-box"/><text x="500" y="100" text-anchor="middle" class="svg-text">Dashboard & Reports</text>
-              <path d="M180 95 L220 50" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
-              <path d="M180 95 L220 150" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
-              <path d="M380 50 L420 100" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
-              <path d="M380 150 L420 100" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrow)"></path>
-            </svg>
+          <!-- Fintech Venture -->
+          <div class="venture-card fintech-card" data-category="fintech">
+            <div class="card-header">
+              <div class="card-icon fintech-icon">💳</div>
+              <div class="card-status">
+                <span class="status-badge planning">Planning</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">CryptoFlow</h3>
+              <p class="card-description">
+                Decentralized finance platform enabling seamless cryptocurrency 
+                transactions with traditional banking integration.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">DeFi Integration</div>
+                <div class="feature-tag">Multi-chain Support</div>
+                <div class="feature-tag">Smart Contracts</div>
+                <div class="feature-tag">Mobile First</div>
+              </div>
+              
+              <div class="card-metrics">
+                <div class="metric-item">
+                  <span class="metric-value">10+</span>
+                  <span class="metric-name">Blockchains</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">1M+</span>
+                  <span class="metric-name">Target Users</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-value">Q3</span>
+                  <span class="metric-name">2025 Launch</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Get Notified</button>
+              <button class="btn-card secondary">Whitepaper</button>
+            </div>
+            
+            <div class="card-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+              </div>
+              <span class="progress-text">25% to Launch</span>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Request Demo</a>
-            <a class="btn" href="#">Partner (coming)</a>
+      <!-- Innovation Process -->
+      <section class="process-section">
+        <div class="section-header">
+          <h2 class="section-title">Innovation Process</h2>
+          <p class="section-subtitle">From concept to market disruption</p>
+        </div>
+        
+        <div class="process-timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">🔍</div>
+            <div class="timeline-content">
+              <h3>Research & Discovery</h3>
+              <p>Market analysis, user research, and opportunity identification</p>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
-  </main>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">💡</div>
+            <div class="timeline-content">
+              <h3>Ideation & Validation</h3>
+              <p>Concept development, MVP creation, and user feedback loops</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🛠️</div>
+            <div class="timeline-content">
+              <h3>Development & Testing</h3>
+              <p>Agile development, quality assurance, and performance optimization</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🚀</div>
+            <div class="timeline-content">
+              <h3>Launch & Scale</h3>
+              <p>Go-to-market strategy, user acquisition, and growth optimization</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — Startups</p></div></footer>
+      <!-- Collaboration Section -->
+      <section id="collaboration" class="collaboration-section">
+        <div class="collaboration-content">
+          <div class="collab-text">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>
+              Whether you're an investor, co-founder, or fellow entrepreneur, 
+              I'm always open to discussing new opportunities and partnerships.
+            </p>
+            
+            <div class="collab-features">
+              <div class="collab-item">
+                <div class="collab-icon">🤝</div>
+                <div>
+                  <h4>Strategic Partnerships</h4>
+                  <p>Collaborative ventures and joint initiatives</p>
+                </div>
+              </div>
+              
+              <div class="collab-item">
+                <div class="collab-icon">💰</div>
+                <div>
+                  <h4>Investment Opportunities</h4>
+                  <p>Seed funding and growth capital discussions</p>
+                </div>
+              </div>
+              
+              <div class="collab-item">
+                <div class="collab-icon">🎯</div>
+                <div>
+                  <h4>Advisory Roles</h4>
+                  <p>Technical and strategic guidance for startups</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="collab-actions">
+              <a href="index.html#contact" class="btn-primary">
+                <span>Start a Conversation</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </a>
+              <a href="mailto:darshak@example.com" class="btn-secondary">
+                <span>Send Email</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="collab-visual">
+            <div class="network-visualization">
+              <div class="network-node central">DK</div>
+              <div class="network-node">Investors</div>
+              <div class="network-node">Co-founders</div>
+              <div class="network-node">Mentors</div>
+              <div class="network-node">Customers</div>
+              <div class="network-connection"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Simple Background -->
+  <div class="startup-simple-background"></div>
+
+  <footer class="site-footer">
+    <p>© 2025 Darshak Kanani — Building Tomorrow's Solutions Today</p>
+  </footer>
 
   <script src="js/main.js"></script>
   <script src="js/startups.js"></script>

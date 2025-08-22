@@ -11,8 +11,14 @@
   <!-- Header (same nav) -->
   <header class="site-header" role="banner">
     <div class="nav container">
-      <a class="brand" href="index.html"><span class="logo">DK</span><span class="brand-text">Darshak</span></a>
-      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo">DK</span><span class="brand-text">Darshak Kanani</span>
+      </a>
+
+      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav id="primary-nav" class="primary-nav" role="navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -20,207 +26,1440 @@
           <li><a href="ai.html">AI</a></li>
           <li><a href="blockchain.html">Blockchain</a></li>
           <li><a href="startups.html">Startups</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
+
       <div class="nav-actions">
         <input id="site-search" class="site-search" type="search" placeholder="Search (press /)" aria-label="Search">
-        <button id="theme-toggle" class="btn small" title="Toggle theme">🌙</button>
+        <button id="theme-toggle" class="btn small" title="Toggle theme" aria-pressed="false">🌙</button>
       </div>
     </div>
   </header>
 
+  <div class="main-content">
+    <!-- Live Background Canvas -->
+    <canvas id="matrix-rain" class="matrix-background"></canvas>
+    <div class="cyber-grid-overlay"></div>
+
   <main id="main">
-    <section id="cyber-overview" class="section container">
-      <div class="section-header">
-        <div>
-          <h1>Cybersecurity</h1>
-          <p class="muted">Achievements, projects, bug hunting, certifications, tools and roadmap.</p>
+      <section id="cyber-overview">
+        <div class="hero cyber-hero">
+          <div class="hero-inner">
+            <div class="hero-content">
+              <div class="hero-badge">🔒</div>
+              <h1 id="typing-title">Cybersecurity Portfolio</h1>
+              <p class="hero-subtitle" id="typing-subtitle">Professional achievements, cutting-edge projects, and hands-on experience in offensive & defensive security.</p>
+              <div class="hero-stats">
+                <div class="stat-item" data-count="15">
+                  <div class="stat-number">1</div>
+                  <div class="stat-label">Bugs Found</div>
+                </div>
+                <div class="stat-item" data-count="50">
+                  <div class="stat-number">0</div>
+                  <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item" data-count="7">
+                  <div class="stat-number">6</div>
+                  <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item" data-count="3">
+                  <div class="stat-number">3</div>
+                  <div class="stat-label">Platforms</div>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <button class="btn primary cyber-btn" id="hack-btn">
+                  <span class="btn-text">Initialize System</span>
+                  <span class="btn-icon">⚡</span>
+                </button>
+                <button class="btn secondary cyber-btn" id="terminal-btn">
+                  <span class="btn-text">Open Terminal</span>
+                  <span class="btn-icon">💻</span>
+                </button>
+              </div>
+            </div>
         </div>
       </div>
 
       <!-- Filters -->
+        <div class="filters-section">
+          <div class="container">
+            <div class="filters-header">
+              <h3>🔍 Filter Projects</h3>
+              <p class="muted">Browse projects by category and technology</p>
+            </div>
       <div class="chips filters" role="toolbar" aria-label="Filter projects">
         <button class="chip active" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="web">Web</button>
-        <button class="chip" data-filter="bash">Bash</button>
-        <button class="chip" data-filter="siem">SIEM</button>
+              <button class="chip" data-filter="web">Web Security</button>
+              <button class="chip" data-filter="bash">Bash Automation</button>
+              <button class="chip" data-filter="siem">SIEM & Monitoring</button>
+              <button class="chip" data-filter="forensics">Digital Forensics</button>
+              <button class="chip" data-filter="malware">Malware Analysis</button>
+            </div>
+            <div class="filter-status">
+              <span class="status-text">Status: <span class="status-value">Ready</span></span>
+              <div class="status-indicator"></div>
+            </div>
+          </div>
       </div>
 
-      <div class="grid grid-2">
-        <div>
-
-          <article class="panel timeline">
-            <h3>Goals</h3>
-            <ol>
-              <li><strong>December 2025</strong> — CompTIA Security+</li>
-              <li><strong>June 2026</strong> — OSCP (Offensive Security Certified Professional)</li>
-              <li><strong>December 2026</strong> — Mobile App Pentesting</li>
-            </ol>
+            <article class="panel goals-showcase">
+              <div class="section-header">
+                <h3>🎯 Career Goals & Roadmap</h3>
+                <p class="muted">Strategic milestones and professional development targets</p>
+              </div>
+              
+              <div class="goals-timeline">
+                <div class="goal-item">
+                  <div class="goal-marker">1</div>
+                  <div class="goal-content">
+                    <div class="goal-header">
+                      <h4>CompTIA Security+</h4>
+                      <span class="goal-date">December 2025</span>
+                    </div>
+                    <p>Foundation certification covering network security, compliance, and operational security</p>
+                    <div class="goal-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                      </div>
+                      <span class="progress-text">75% Complete</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="goal-item">
+                  <div class="goal-marker">2</div>
+                  <div class="goal-content">
+                    <div class="goal-header">
+                      <h4>OSCP Certification</h4>
+                      <span class="goal-date">June 2026</span>
+                    </div>
+                    <p>Offensive Security Certified Professional - hands-on penetration testing certification</p>
+                    <div class="goal-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                      </div>
+                      <span class="progress-text">45% Complete</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="goal-item">
+                  <div class="goal-marker">3</div>
+                  <div class="goal-content">
+                    <div class="goal-header">
+                      <h4>Mobile App Pentesting</h4>
+                      <span class="goal-date">December 2026</span>
+                    </div>
+                    <p>Specialized skills in mobile application security testing and vulnerability assessment</p>
+                    <div class="goal-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%"></div>
+                      </div>
+                      <span class="progress-text">25% Complete</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </article>
 
-          <article class="panel">
-            <h3>Labs</h3>
-            <ul class="map-list">
-              <h4>TryHackMe</h4>
-              <p>
-                  - Intermediate and Advanced Rooms
-              </p>
-              <h4>HackTheBox</h4>
-              <p>
-                  - Inter
-              </p>
-              <h4>Portswigger</h4>
-              <p>
-                  - Challenge Labs
-              </p>
-            </ul>
-          </article>
           
-          <article class="panel">
-            <h3>Certifications</h3>
-            <ul class="map-list">
-              <li>CEH (Certified Ethical Hacker)</li>
-              <li>Cisco Endpoint Security</li>
-              <li>OSCP (Offensive Security Certified Professional) => Pending</li>
-              <li>CompTIA Security+ => Pending</li> 
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h3>Bug Hunting</h3>
-            <p class="muted">Platforms: HackerOne, Bugcrowd. Public writeups & methodology are linked below (add real links later).</p>
-            <div class="accordion" id="bug-accordion">
-              <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false">IDOR writeup — summary & remediation</button>
-                <div class="accordion-content">
-                  <p>Found IDOR in profile endpoint allowing enumeration. Added server-side ownership checks and randomized identifiers.</p>
+            
+            <article class="panel certifications-showcase">
+              <div class="section-header">
+                <h3>🏆 Professional Certifications</h3>
+                <p class="muted">Industry-recognized credentials demonstrating expertise in cybersecurity domains</p>
+                </div>
+              
+              <div class="certifications-grid">
+                <!-- EC-Council Certifications -->
+                <div class="cert-category">
+                  <div class="category-header">
+                    <div class="category-icon">🟢</div>
+                    <div class="category-info">
+                      <h4>EC-Council</h4>
+                      <p>Leading cybersecurity certification provider</p>
+              </div>
+                </div>
+                  
+                  <div class="cert-items">
+                    <div class="cert-item">
+                      <div class="cert-icon">🔐</div>
+                      <div class="cert-details">
+                        <h5>CEH (Certified Ethical Hacker)</h5>
+                        <p>Professional ethical hacking and penetration testing</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Advanced</span>
+                          <span class="cert-validity">Valid until 2026</span>
+              </div>
+                </div>
+                      <a href="pdfs/Certificates/ECC-CEH-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                    
+                    <div class="cert-item">
+                      <div class="cert-icon">🛡️</div>
+                      <div class="cert-details">
+                        <h5>NDE (Network Defense Essentials)</h5>
+                        <p>Network security and defensive strategies</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Intermediate</span>
+                          <span class="cert-validity">Valid until 2026</span>
+                        </div>
+                      </div>
+                      <a href="pdfs/Certificates/ECC-NDE-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                    
+                    <div class="cert-item">
+                      <div class="cert-icon">⚔️</div>
+                      <div class="cert-details">
+                        <h5>EHE (Ethical Hacking Essentials)</h5>
+                        <p>Fundamental ethical hacking principles</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Foundation</span>
+                          <span class="cert-validity">Valid until 2026</span>
+                        </div>
+                      </div>
+                      <a href="pdfs/Certificates/ECC-EHE-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                    
+                    <div class="cert-item">
+                      <div class="cert-icon">🔍</div>
+                      <div class="cert-details">
+                        <h5>DFE (Digital Forensics Essentials)</h5>
+                        <p>Digital evidence collection and analysis</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Intermediate</span>
+                          <span class="cert-validity">Valid until 2026</span>
+                        </div>
+                      </div>
+                      <a href="pdfs/Certificates/ECC-DFE-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Cisco Certifications -->
+                <div class="cert-category">
+                  <div class="category-header">
+                    <div class="category-icon">🔵</div>
+                    <div class="category-info">
+                      <h4>Cisco</h4>
+                      <p>Network security and infrastructure expertise</p>
+                    </div>
+                  </div>
+                  
+                  <div class="cert-items">
+                    <div class="cert-item">
+                      <div class="cert-icon">👨‍💼</div>
+                      <div class="cert-details">
+                        <h5>Junior Cybersecurity Analyst</h5>
+                        <p>Entry-level cybersecurity analysis and monitoring</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Foundation</span>
+                          <span class="cert-validity">Valid until 2026</span>
+                        </div>
+                      </div>
+                      <a href="pdfs/Certificates/CISCO-JuniorCybersecurityAnalyst-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                    
+                    <div class="cert-item">
+                      <div class="cert-icon">💻</div>
+                      <div class="cert-details">
+                        <h5>Endpoint Security</h5>
+                        <p>Device security and threat protection</p>
+                        <div class="cert-meta">
+                          <span class="cert-level">Intermediate</span>
+                          <span class="cert-validity">Valid until 2026</span>
+                        </div>
+                      </div>
+                      <a href="pdfs/Certificates/CISCO-EndpointSecurity-Certificate.pdf" download class="btn small">Download</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false">Path Traversal via archives — approach</button>
-                <div class="accordion-content">
-                  <p>Validated and sanitized extracted file paths. Used safe unzip libs with directory whitelisting.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false">Symlink Traversal — lab reproduction</button>
-                <div class="accordion-content">
-                  <p>Controlled symlink creation to escape extraction directory; mitigation via symlink resolution and base path enforcement.</p>
-                </div>
+              
+              <!-- Certification Summary -->
+              <div class="cert-summary">
+                <div class="summary-stats">
+                  <div class="summary-item">
+                    <div class="summary-number">7</div>
+                    <div class="summary-label">Total Certifications</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="summary-number">3</div>
+                    <div class="summary-label">Certification Bodies</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="summary-number">100%</div>
+                    <div class="summary-label">Valid & Current</div>
+                  </div>
               </div>
             </div>
           </article>
 
-              <article class="card project-card" data-title="Detection Engineering" data-tags="siem,blue-team" data-desc="Sigma rules & KQL playbooks for SIEM detections." tabindex="0">
-                <h4>Detection Engineering</h4>
-                <p>Sigma rules & KQL playbooks for SIEM detections.</p>
-                <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
+            <article class="panel bounty-showcase">
+              <div class="section-header">
+                <h3>🐛 Bug Bounty Programs</h3>
+                <p class="muted">Active participation in various bug bounty platforms with successful submissions and writeups</p>
+              </div>
+              
+              <div class="bounty-platforms">
+                <!-- HackerOne Section -->
+                <div class="bounty-platform">
+                  <div class="platform-header">
+                    <div class="platform-icon">🐛</div>
+                    <div class="platform-info">
+                      <h4>HackerOne</h4>
+                      <p>World's largest bug bounty platform</p>
+                    </div>
+                    <div class="platform-stats">
+                      <div class="stat-badge primary">Rank: --</div>
+                      <div class="stat-badge success">--</div>
+                      <div class="stat-badge warning">Bugs: --</div>
+                      <div class="stat-badge info">Programs: --</div>
+                    </div>
+                  </div>
+                  
+                  <div class="bounty-achievements">
+                    <h5>🏆 Notable Achievements</h5>
+                    <div class="achievements-grid">
+                      <div class="achievement-item critical">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity critical">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item high">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                          <span class="severity high">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item medium">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity medium">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="platform-actions">
+                    <a href="https://hackerone.com/darshakkanani_" target="_blank" class="btn primary">View Profile</a>
+                    <a href="https://medium.com/@darshakkanani444" class="btn secondary">View Writeups</a>
+                  </div>
+                </div>
+
+                <!-- Bugcrowd Section -->
+                <div class="bounty-platform">
+                  <div class="platform-header">
+                    <div class="platform-icon">🕷️</div>
+                    <div class="platform-info">
+                      <h4>Bugcrowd</h4>
+                      <p>Innovative crowdsourced security platform</p>
+                    </div>
+                    <div class="platform-stats">
+                      <div class="stat-badge primary">Rank: --</div>
+                      <div class="stat-badge success">Reputation: --</div>
+                      <div class="stat-badge warning">Bugs: 2</div>
+                      <div class="stat-badge info">Programs: 2</div>
+                      <div class="Hall of Fame">5</div>
+                    </div>
+                  </div>
+                  
+                  <div class="bounty-achievements">
+                    <h5>🏆 Notable Achievements</h5>
+                    <div class="achievements-grid">
+                      <div class="achievement-item high">
+                        <div class="achievement-header">
+                          <span class="achievement-title">Sesstion Expires</span>
+                          <span class="achievement-reward">$50</span>
+                        </div>
+                        <p class="achievement-desc">Session not expiring after password change</p>
+                        <div class="achievement-meta">
+                          <span class="severity high">Low</span>
+                          <span class="category">Authentication</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item medium">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity medium">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item low">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity low">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="platform-actions">
+                    <a href="https://bugcrowd.com/darshakkanani_" target="_blank" class="btn primary">View Profile</a>
+                    <a href="https://medium.com/@darshakkanani444" class="btn secondary">View Writeups</a>
+                  </div>
+                </div>
+
+                <!-- Intigriti Section -->
+                <div class="bounty-platform">
+                  <div class="platform-header">
+                    <div class="platform-icon">🎯</div>
+                    <div class="platform-info">
+                      <h4>Intigriti</h4>
+                      <p>European cybersecurity platform</p>
+                    </div>
+                    <div class="platform-stats">
+                      <div class="stat-badge primary">Rank: --</div>
+                      <div class="stat-badge success">Reputation: --</div>
+                      <div class="stat-badge warning">Bugs: --</div>
+                      <div class="stat-badge info">Programs: --</div>
+                    </div>
+                  </div>
+                  
+                  <div class="bounty-achievements">
+                    <h5>🏆 Notable Achievements</h5>
+                    <div class="achievements-grid">
+                      <div class="achievement-item medium">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity medium">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item medium">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity medium">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                      
+                      <div class="achievement-item low">
+                        <div class="achievement-header">
+                          <span class="achievement-title">--</span>
+                          <span class="achievement-reward">--</span>
+                        </div>
+                        <p class="achievement-desc">--</p>
+                        <div class="achievement-meta">
+                          <span class="severity low">--</span>
+                          <span class="category">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="platform-actions">
+                    <a href="https://app.intigriti.com/researcher/profile/darshakkanani" target="_blank" class="btn primary">View Profile</a>
+                    <a href="https://medium.com/@darshakkanani444" class="btn secondary">View Writeups</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bug Bounty Summary -->
+              <div class="bounty-summary">
+                <div class="summary-stats">
+                  <div class="summary-item">
+                    <div class="summary-number">1</div>
+                    <div class="summary-label">Total Bugs Found</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="summary-number">$50</div>
+                    <div class="summary-label">Total Rewards</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="summary-number">1</div>
+                    <div class="summary-label">Programs Participated</div>
+                  </div>
+                  <div class="summary-item">
+                    <div class="summary-number">1</div>
+                    <div class="summary-label">Platforms</div>
+                  </div>
+                </div>
+              </div>
               </article>
+
+            <article class="panel skills-showcase">
+              <div class="section-header">
+                <h3>🛠️ Technical Skills & Expertise</h3>
+                <p class="muted">Comprehensive skill set across offensive and defensive cybersecurity domains</p>
+              </div>
+              
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">🌐</div>
+                    <div class="category-info">
+                      <h4>Web Security</h4>
+                      <p>Application security testing and vulnerability assessment</p>
+                    </div>
+                  </div>
+                  <div class="skills-list">
+                    <div class="skill-item">
+                      <span class="skill-name">Cross-Site Scripting (XSS)</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">SQL Injection</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 80%"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">IDOR Vulnerabilities</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 90%"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">SSRF Attacks</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">🛡️</div>
+                    <div class="category-info">
+                      <h4>Blue Team</h4>
+                      <p>Defensive security and incident response</p>
+                    </div>
+                  </div>
+                  <div class="skills-list">
+                    <div class="skill-item">
+                      <span class="skill-name">SIEM Rules & Monitoring</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Incident Response Playbooks</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="skill-percentage">65%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Threat Hunting</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 60%"></div>
+                        </div>
+                        <span class="skill-percentage">60%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <div class="category-header">
+                    <div class="category-icon">🤖</div>
+                    <div class="category-info">
+                      <h4>Automation & Scripting</h4>
+                      <p>Efficiency tools and custom automation</p>
+                    </div>
+                  </div>
+                  <div class="skills-list">
+                    <div class="skill-item">
+                      <span class="skill-name">Bash Scripting</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Python Basics</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                      </div>
+                    </div>
+                    <div class="skill-item">
+                      <span class="skill-name">Custom Tools Development</span>
+                      <div class="skill-level">
+                        <div class="skill-bar">
+                          <div class="skill-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </article>
 
-          <article class="panel">
-            <h3>Skills</h3>
-            <ul class="map-list">
-              <li>Web: XSS, IDOR, SSRF (beginner)</li>
-              <li>Blue Team: SIEM rules, playbooks</li>
-              <li>Automation: Bash, Python basics</li>
+            <!-- Methodology Section -->
+            <article class="panel methodology-showcase">
+              <div class="section-header">
+                <h3>🔍 Methodology & Tools</h3>
+                <p class="muted">Systematic approach to security testing and assessment</p>
+              </div>
+              
+              <div class="methodology-grid">
+                <div class="methodology-item">
+                  <div class="methodology-icon">🔍</div>
+                  <div class="methodology-content">
+                    <h4>Reconnaissance</h4>
+                    <p>Comprehensive information gathering and target analysis</p>
+                    <ul class="methodology-tools">
+                      <li><strong>Subdomain enumeration:</strong> Amass, Subfinder</li>
+                      <li><strong>Port scanning:</strong> Nmap, Masscan</li>
+                      <li><strong>Technology fingerprinting:</strong> Wappalyzer, BuiltWith</li>
+                      <li><strong>Historical data:</strong> Wayback machine analysis</li>
             </ul>
-          </article>
-
-          <article class="card project-card" data-title="Bash Automation Toolkit" data-tags="bash,automation" data-desc="Automated recon, bulk screenshots, report generation." tabindex="0">
-            <h4>Bash Automation Toolkit</h4>
-            <p>Automated recon, bulk screenshots, report generation.</p>
-            <p class="meta">Bash, cron, curl</p>
-            <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
-          </article>
-          
-          <article class="panel">
-            <h3>Common Commands</h3>
-            <p class="muted">Handy one-liners I use during recon.</p>
-            <div class="code-block" data-title="Recon commands">
-              <pre><code>    nmap -sC -sV -oN scan.txt target.example
-    gau example.com | anew urls.txt
-    cat urls.txt | httpx -mc 200 -o live.txt
-    cat live.txt | waybackurls | anew wayback.txt
-    cat wayback.txt | gau | anew gau.txt
-    cat gau.txt | httpx -mc 200 -o live.txt
-    cat live.txt | gf redirect | anew redirect.txt
-    cat redirect.txt | gf redirect | anew redirect.txt
-    cat redirect.txt | gf redirect | anew redirect.txt
-                        </code></pre>
+                  </div>
+                </div>
+                
+                <div class="methodology-item">
+                  <div class="methodology-icon">⚔️</div>
+                  <div class="methodology-content">
+                    <h4>Vulnerability Testing</h4>
+                    <p>Systematic security assessment using industry standards</p>
+                    <ul class="methodology-tools">
+                      <li><strong>OWASP Top 10:</strong> Comprehensive methodology</li>
+                      <li><strong>Custom payloads:</strong> Targeted testing scenarios</li>
+                      <li><strong>Automated scanning:</strong> Burp Suite, OWASP ZAP</li>
+                      <li><strong>Manual verification:</strong> Proof of concept validation</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="methodology-item">
+                  <div class="methodology-icon">📋</div>
+                  <div class="methodology-content">
+                    <h4>Reporting & Documentation</h4>
+                    <p>Professional documentation and remediation guidance</p>
+                    <ul class="methodology-tools">
+                      <li><strong>Detailed PoC:</strong> Step-by-step reproduction</li>
+                      <li><strong>Impact assessment:</strong> Risk and severity analysis</li>
+                      <li><strong>Remediation:</strong> Actionable security fixes</li>
+                      <li><strong>Video demos:</strong> Visual proof of concepts</li>
+                    </ul>
+                  </div>
+                </div>
             </div>
           </article>
+
+
+
+            <article class="panel projects-showcase">
+              <div class="section-header">
+                <h3>🚀 Cybersecurity Projects</h3>
+                <p class="muted">A comprehensive collection of security tools, labs, and research projects across different skill levels.</p>
         </div>
 
-        <div>
-          <article class="panel">
-            <h3>Projects</h3>
-            <div class="cards">
-              <article class="card project-card" data-title="Web App Pentesting" data-tags="web,app" data-desc="DVWA & Juice Shop: XSS, IDOR, SQLi experiments & writeups." tabindex="0">
+              <!-- Project Categories -->
+              <div class="project-categories">
+                <!-- Beginner Level -->
+                <div class="project-category">
+                  <div class="category-header">
+                    <div class="category-icon">🟢</div>
+                    <div class="category-info">
                 <h4>Beginner Level</h4>
-                    <p>                        
-                        <li><a href="https://github.com/darshakkanani/Honeypot-Setup.git">Honeypot Setup </a></li>
-                        <li><a href="https://github.com/darshakkanani/Password-Cracker.git">Password Cracker</a></li>
-                        <li><a href="https://github.com/darshakkanani/Packet-Sniffer.git">Packet Sniffer</a></li>
-                        <li><a href="https://github.com/darshakkanani/Keylogger.git">Keylogger</a></li>
-                        <li><a href="https://github.com/darshakkanani/Forensic-Analysis.git">Forensic Analysis</a></li>
-                        <li><a href="https://github.com/darshakkanani/Home-Lab-Setup.git">Home Lab Setup</a></li>
-                        <li><a href="https://github.com/darshakkanani/Basic-Cryptography.git">Basic Cryptography</a></li>
-                        <li><a href="https://github.com/darshakkanani/Phishing-Campaign.git">Phishing Campaign</a></li>
-                        <li><a href="https://github.com/darshakkanani/Wi-Fi-Security-Analysis.git">Wi-Fi Security Analysis</a></li>
-                        <li><a href="https://github.com/darshakkanani/Network-Vulnerability-Scanning.git">Network Vulnerability Scanning</a></li>
-                        <li><a href="https://github.com/darshakkanani/Firewall-Rules.git">Firewall Rules</a></li>
-                        <li><a href="https://github.com/darshakkanani/2FA-System.git">2FA System</a></li>
-                        <li><a href="https://github.com/darshakkanani/Secure-Web-App.git">Secure Web App</a></li>
-                        <li><a href="https://github.com/darshakkanani/Snort-IDS.git">Snort IDS</a></li>                      
-                        <li><a href="https://github.com/darshakkanani/Vulnerability-Scanner.git">Vulnerability Scanner</a></li>
-                        <li><a href="https://github.com/darshakkanani/DNS-Spoofer.git">DNS Spoofer</a></li>
-                    </p>
+                      <p>Foundation projects to build core security skills</p>
+                    </div>
+                    <div class="project-count">16 Projects</div>
+                  </div>
+                  <div class="project-grid">
+                    <a href="https://github.com/darshakkanani/Honeypot-Setup.git" class="project-item" target="_blank">
+                      <div class="project-icon">🕸️</div>
+                      <div class="project-details">
+                        <h5>Honeypot Setup</h5>
+                        <p>Deceptive security system to monitor attacks</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Password-Cracker.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔐</div>
+                      <div class="project-details">
+                        <h5>Password Cracker</h5>
+                        <p>Hash cracking and brute force tools</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Packet-Sniffer.git" class="project-item" target="_blank">
+                      <div class="project-icon">📡</div>
+                      <div class="project-details">
+                        <h5>Packet Sniffer</h5>
+                        <p>Network traffic analysis tool</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Keylogger.git" class="project-item" target="_blank">
+                      <div class="project-icon">⌨️</div>
+                      <div class="project-details">
+                        <h5>Keylogger</h5>
+                        <p>Input monitoring for security research</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Forensic-Analysis.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔍</div>
+                      <div class="project-details">
+                        <h5>Forensic Analysis</h5>
+                        <p>Digital evidence examination tools</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Home-Lab-Setup.git" class="project-item" target="_blank">
+                      <div class="project-icon">🏠</div>
+                      <div class="project-details">
+                        <h5>Home Lab Setup</h5>
+                        <p>Personal security testing environment</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Intermediate Level -->
+                <div class="project-category">
+                  <div class="category-header">
+                    <div class="category-icon">🟡</div>
+                    <div class="category-info">
                   <h4>Intermediate Level</h4>
-                    <p>
-                        <li><a href="https://github.com/darshakkanani/Malware.git">Malware</a></li>
-                        <li><a href="https://github.com/darshakkanani/Antivirus.git">Antivirus</a></li>
-                        <li><a href="https://github.com/darshakkanani/Anomaly-Detection-System.git">Anomaly Detection System</a></li>
-                        <li><a href="https://github.com/darshakkanani/Malware-Reverse-Engineering.git">Malware Reverse Engineering</a></li>
-                        <li><a href="https://github.com/darshakkanani/TLS-Mutual-Authentication.git">TLS Mutual Authentication</a></li>
-                        <li><a href="https://github.com/darshakkanani/Zero-Day-Exploit.git">Zero Day Exploit</a></li>
-                        <li><a href="https://github.com/darshakkanani/Anonymous-Communication.git">Anonymous Communication</a></li>
-                        <li><a href="https://github.com/darshakkanani/Threat-Intelligence-Honeypots.git">Threat Intelligence Honeypots</a></li>
-                        <li><a href="https://github.com/darshakkanani/Password-Cracking-GPU-Cluster.git">Password Cracking GPU Cluster</a></li>
-                        <li><a href="https://github.com/darshakkanani/Malware-Analysis-Sandbox.git">Malware Analysis Sandbox</a></li>
-                        <li><a href="https://github.com/darshakkanani/Full-Disk-Encryption.git">Full Disk Encryption</a></li>
-                        <li><a href="https://github.com/darshakkanani/IDS-IPS-with-Machine-Learning.git">IDS/IPS with Machine Learning</a></li>
-                        <li><a href="https://github.com/darshakkanani/Anonymizing-Routing.git">Anonymizing Routing</a></li>
-                        <li><a href="https://github.com/darshakkanani/Secure-Cryptocurrency-Wallet.git">Secure Cryptocurrency Wallet</a></li>
-                        <li><a href="https://github.com/darshakkanani/Rootkit-Analysis.git">Rootkit Analysis</a></li>
-                        <li><a href="https://github.com/darshakkanani/Dark-Web-Scraper.git">Dark Web Scraper</a></li>
-                        <li><a href="https://github.com/darshakkanani/DDoS-Simulation.git">DDoS Simulation</a></li>
-                        <li><a href="https://github.com/darshakkanani/Secure-Messaging-App.git">Secure Messaging App</a></li>
-                        <li><a href="https://github.com/darshakkanani/PKI-Infrastructure.git">PKI Infrastructure</a></li>
-                    </p>
+                      <p>Advanced tools and sophisticated security solutions</p>
+                    </div>
+                    <div class="project-count">18 Projects</div>
+                  </div>
+                  <div class="project-grid">
+                    <a href="https://github.com/darshakkanani/Malware.git" class="project-item" target="_blank">
+                      <div class="project-icon">🦠</div>
+                      <div class="project-details">
+                        <h5>Malware Analysis</h5>
+                        <p>Malicious software research tools</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Antivirus.git" class="project-item" target="_blank">
+                      <div class="project-icon">🛡️</div>
+                      <div class="project-details">
+                        <h5>Antivirus System</h5>
+                        <p>Real-time threat detection engine</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Anomaly-Detection-System.git" class="project-item" target="_blank">
+                      <div class="project-icon">📊</div>
+                      <div class="project-details">
+                        <h5>Anomaly Detection</h5>
+                        <p>ML-based threat identification</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Malware-Reverse-Engineering.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔬</div>
+                      <div class="project-details">
+                        <h5>Reverse Engineering</h5>
+                        <p>Binary analysis and decompilation</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/TLS-Mutual-Authentication.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔒</div>
+                      <div class="project-details">
+                        <h5>TLS Mutual Auth</h5>
+                        <p>Two-way SSL certificate validation</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Zero-Day-Exploit.git" class="project-item" target="_blank">
+                      <div class="project-icon">💥</div>
+                      <div class="project-details">
+                        <h5>Zero-Day Exploit</h5>
+                        <p>Unknown vulnerability research</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Expert Level -->
+                <div class="project-category">
+                  <div class="category-header">
+                    <div class="category-icon">🔴</div>
+                    <div class="category-info">
                     <h4>Expert Level</h4>
-                    <p>
-                        <li><a href="https://github.com/darshakkanani/Zero-Day-Vulnerability-Research.git">Zero Day Vulnerability Research</a></li>
-                        <li><a href="https://github.com/darshakkanani/Smart-Contract-Auditing.git">Smart Contract Auditing</a></li>
-                        <li><a href="https://github.com/darshakkanani/Custom-Assessment-Tools.git">Custom Assessment Tools</a></li>
-                        <li><a href="https://github.com/darshakkanani/Threat-Detection-with-Machine-Learning.git">Threat Detection with Machine Learning</a></li>
-                        <li><a href="https://github.com/darshakkanani/Firmware-Reverse-Engineering.git">Firmware Reverse Engineering</a></li>
-                        <li><a href="https://github.com/darshakkanani/ICS-Security-Industrial-Control-Systems.git">ICS Security (Industrial Control Systems)</a></li>
-                        <li><a href="https://github.com/darshakkanani/Nation-State-Malware-Analysis.git">Nation State Malware Analysis</a></li>
-                        <li><a href="https://github.com/darshakkanani/Advanced-Firewall.git">Advanced Firewall</a></li>
-                        <li><a href="https://github.com/darshakkanani/IoT-Security-Tools.git">IoT Security Tools</a></li>
-                        <li><a href="https://github.com/darshakkanani/Custom-Cyber-Ranges.git">Custom Cyber Ranges</a></li>
-                        <li><a href="https://github.com/darshakkanani/Malware-Obfuscation.git">Malware Obfuscation</a></li>
-                        <li><a href="https://github.com/darshakkanani/In-Memory-Invasion.git">In-Memory Invasion</a></li>
-                        <li><a href="https://github.com/darshakkanani/Linux-Windows-Kernel-Backdoor.git">Linux/Windows Kernel Backdoor</a></li>
-                        <li><a href="https://github.com/darshakkanani/Side-Channel-Attacks.git">Side Channel Attacks</a></li>
-                        <li><a href="https://github.com/darshakkanani/ARM-x86-Rootkit.git">ARM/x86 Rootkit</a></li>
-                    </p>
-                <div class="card-actions"><button class="btn small open-modal" data-modal="cyber-modal">Details</button></div>
+                      <p>Cutting-edge research and advanced security implementations</p>
+                    </div>
+                    <div class="project-count">15 Projects</div>
+                  </div>
+                  <div class="project-grid">
+                    <a href="https://github.com/darshakkanani/Zero-Day-Vulnerability-Research.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔬</div>
+                      <div class="project-details">
+                        <h5>Zero-Day Research</h5>
+                        <p>Advanced vulnerability discovery</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Smart-Contract-Auditing.git" class="project-item" target="_blank">
+                      <div class="project-icon">📜</div>
+                      <div class="project-details">
+                        <h5>Smart Contract Audit</h5>
+                        <p>Blockchain security analysis</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Threat-Detection-with-Machine-Learning.git" class="project-item" target="_blank">
+                      <div class="project-icon">🤖</div>
+                      <div class="project-details">
+                        <h5>ML Threat Detection</h5>
+                        <p>AI-powered security monitoring</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Firmware-Reverse-Engineering.git" class="project-item" target="_blank">
+                      <div class="project-icon">🔧</div>
+                      <div class="project-details">
+                        <h5>Firmware Analysis</h5>
+                        <p>Low-level system security</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/ICS-Security-Industrial-Control-Systems.git" class="project-item" target="_blank">
+                      <div class="project-icon">🏭</div>
+                      <div class="project-details">
+                        <h5>ICS Security</h5>
+                        <p>Industrial system protection</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                    
+                    <a href="https://github.com/darshakkanani/Custom-Cyber-Ranges.git" class="project-item" target="_blank">
+                      <div class="project-icon">🎯</div>
+                      <div class="project-details">
+                        <h5>Cyber Ranges</h5>
+                        <p>Custom training environments</p>
+                      </div>
+                      <div class="project-link">→</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- View All Projects Button -->
+              <div class="view-all-projects">
+                <a href="https://github.com/darshakkanani" target="_blank" class="btn primary">
+                  <span>View All Projects on GitHub</span>
+                  <span class="github-icon">📚</span>
+                </a>
+                <p class="muted">Explore the complete collection of security tools and research</p>
+              </div>
               </article>
+
+      <!-- LABS SECTION -->
+      <section class="section">
+        <article class="panel labs-showcase">
+              <div class="section-header">
+                <h3>🧪 Cybersecurity Labs & Training</h3>
+                <p class="muted">Hands-on experience through various platforms and practical exercises to build real-world skills.</p>
         </div>
+
+              <div class="labs-grid">
+                <!-- TryHackMe -->
+                <div class="lab-platform">
+                  <div class="lab-header">
+                    <div class="lab-icon">🟢</div>
+                    <div class="lab-info">
+                      <h4>TryHackMe</h4>
+                      <p>Interactive cybersecurity training platform</p>
       </div>
+                    <div class="lab-stats">
+                      <div class="stat-badge">Rank: #445,299</div>
+                      <div class="stat-badge">Streak: 0</div>
+                    </div>
+                  </div>
+                  
+                  <div class="lab-content">
+                    <div class="lab-section">
+                      <h5>🏆 Achievements & Badges</h5>
+                      <div class="badges-grid">
+                        <div class="badge-item">
+                          <span class="badge-name">OWASP Top 10</span>
+                          <a href="pdfs/TryHackMe/Bedges/OwaspTop10.png" download class="btn small">Download</a>
+                        </div>
+                        <div class="badge-item">
+                          <span class="badge-name">Terminated</span>
+                          <a href="pdfs/TryHackMe/Bedges/Terminated.png" download class="btn small">Download</a>
+                        </div>
+                        <div class="badge-item">
+                          <span class="badge-name">Webbed</span>
+                          <a href="pdfs/TryHackMe/Bedges/web-fund.png" download class="btn small">Download</a>
+                        </div>
+                        <div class="badge-item">
+                          <span class="badge-name">Security Awareness</span>
+                          <a href="pdfs/TryHackMe/Bedges/SecurityAwareness.png" download class="btn small">Download</a>
+                        </div>
+                        <div class="badge-item">
+                          <span class="badge-name">World Wide Web</span>
+                          <a href="pdfs/TryHackMe/Bedges/WorldWideWeb.png" download class="btn small">Download</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="lab-section">
+                      <h5>📚 Completed Learning Paths</h5>
+                      <div class="learning-paths">
+                        <div class="path-category">
+                          <strong>Fundamentals:</strong>
+                          <ul>
+                            <li>Linux Fundamentals Part 1</li>
+                            <li>Windows Fundamentals 2 & 3</li>
+                            <li>Networking & HTTP/DNS</li>
+                            <li>How Websites Work</li>
+                          </ul>
+                        </div>
+                        <div class="path-category">
+                          <strong>Security:</strong>
+                          <ul>
+                            <li>Offensive Security Intro</li>
+                            <li>OWASP Top 10 - 2021</li>
+                            <li>Web Application Security</li>
+                            <li>Common Attacks</li>
+                          </ul>
+                        </div>
+                        <div class="path-category">
+                          <strong>Analysis:</strong>
+                          <ul>
+                            <li>Defensive Security Intro</li>
+                            <li>Cyber Kill Chain</li>
+                            <li>Security Principles</li>
+                            <li>Governance & Regulation</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- HackTheBox -->
+                <div class="lab-platform">
+                  <div class="lab-header">
+                    <div class="lab-icon">🟡</div>
+                    <div class="lab-info">
+                      <h4>HackTheBox</h4>
+                      <p>Advanced penetration testing challenges</p>
+                    </div>
+                    <div class="lab-stats">
+                      <div class="stat-badge">Rank: --</div>
+                      <div class="stat-badge">Streak: 0</div>
+                    </div>
+                  </div>
+                  
+                  <div class="lab-content">
+                    <div class="lab-section">
+                      <h5>🏆 Achievements & Badges</h5>
+                      <div class="badges-grid">
+                        <div class="badge-item">
+                          <span class="badge-name">Academician</span>
+                          <a href="pdfs/HackTheBox/Bedges/academician.webp" download class="btn small">Download</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="lab-section">
+                      <h5>📚 Completed Learning Paths</h5>
+                      <div class="learning-paths">
+                        <div class="path-category">
+                          <strong>Academy:</strong>
+                          <ul>
+                            <li>Intro to Academy</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Portswigger -->
+                <div class="lab-platform">
+                  <div class="lab-header">
+                    <div class="lab-icon">🔴</div>
+                    <div class="lab-info">
+                      <h4>Portswigger</h4>
+                      <p>Web application security labs</p>
+                    </div>
+                    <div class="lab-stats">
+                      <div class="stat-badge">Labs: Active</div>
+                    </div>
+                  </div>
+                  
+                  <div class="lab-content">
+                    <div class="lab-section">
+                      <h5>🔬 Challenge Labs</h5>
+                      <div class="challenge-labs">
+                        <p>Comprehensive web application security labs covering all major vulnerability categories:</p>
+                        <div class="lab-completion-grid">
+                          <div class="lab-item completed">
+                            <div class="lab-status">
+                              <span class="status-icon">✅</span>
+                              <span class="status-text">Completed</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>SQL injection</h6>
+                              <p>51 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item completed">
+                            <div class="lab-status">
+                              <span class="status-icon">✅</span>
+                              <span class="status-text">Completed</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Path traversal</h6>
+                              <p>14 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item in-progress">
+                            <div class="lab-status">
+                              <span class="status-icon">🔄</span>
+                              <span class="status-text">In Progress</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Clickjacking</h6>
+                              <p>5 of 19 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item in-progress">
+                            <div class="lab-status">
+                              <span class="status-icon">🔄</span>
+                              <span class="status-text">In Progress</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Race conditions</h6>
+                              <p>9 of 29 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Cross-site scripting (XSS)</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Cross-site request forgery (CSRF)</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>DOM-based vulnerabilities</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Cross-origin resource sharing (CORS)</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>XML external entity (XXE) injection</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Server-side request forgery (SSRF)</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>HTTP request smuggling</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>OS command injection</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Server-side template injection</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Access control vulnerabilities</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Authentication</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>WebSockets</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Web cache poisoning</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Insecure deserialization</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Information disclosure</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Business logic vulnerabilities</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>HTTP Host header attacks</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>OAuth authentication</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>File upload vulnerabilities</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>JWT</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Essential skills</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Prototype pollution</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>GraphQL API vulnerabilities</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>NoSQL injection</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>API testing</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Web LLM attacks</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                          
+                          <div class="lab-item not-started">
+                            <div class="lab-status">
+                              <span class="status-icon">⏳</span>
+                              <span class="status-text">Not Started</span>
+                            </div>
+                            <div class="lab-content">
+                              <h6>Web cache deception</h6>
+                              <p>0 labs completed</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="completion-summary">
+                          <div class="summary-stats">
+                            <div class="summary-item completed">
+                              <span class="summary-number">2</span>
+                              <span class="summary-label">Completed</span>
+                            </div>
+                            <div class="summary-item in-progress">
+                              <span class="summary-number">2</span>
+                              <span class="summary-label">In Progress</span>
+                            </div>
+                            <div class="summary-item not-started">
+                              <span class="summary-number">27</span>
+                              <span class="summary-label">Not Started</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="platform-actions">
+                          <a class="btn primary" target="_blank" href="https://portswigger.net/web-security">Explore PortSwigger Labs</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lab Progress Summary -->
+              <div class="lab-progress">
+                <div class="progress-stats">
+                  <div class="progress-item">
+                    <div class="progress-number">20+</div>
+                    <div class="progress-label">Learning Paths</div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-number">5</div>
+                    <div class="progress-label">Badges Earned</div>
+                  </div>
+                  <div class="progress-item">
+                    <div class="progress-number">3</div>
+                    <div class="progress-label">Platforms</div>
+                  </div>
+                </div>
+                <div class="lab-cta">
+                  <a href="https://tryhackme.com/p/darshakkanani" target="_blank" class="btn primary">View TryHackMe Profile</a>
+                  <a href="https://app.hackthebox.com/profile/overview" target="_blank" class="btn secondary">View HTB Profile</a>
+                </div>
+              </div>
+            </article>
     </section>
     
     <!-- Modal -->
@@ -235,9 +1474,59 @@
         </div>
       </div>
     </div>
-  </main>
 
-  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — Cybersecurity</p></div></footer>
+      <!-- Terminal Modal -->
+      <div id="terminal-modal" class="modal terminal-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog terminal-dialog">
+          <div class="modal-header terminal-header">
+            <div class="terminal-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control maximize"></span>
+            </div>
+            <h4 class="modal-title">Terminal - root@cybersecurity:~#</h4>
+            <button class="btn small modal-close" aria-label="Close">✕</button>
+          </div>
+          <div class="modal-content terminal-content">
+            <div class="terminal-output" id="terminal-output">
+              <div class="output-line">Welcome to Cybersecurity Terminal v2.0</div>
+              <div class="output-line">Type 'help' for available commands</div>
+              <div class="output-line">Type 'clear' to clear terminal</div>
+              <div class="output-line">Type 'exit' to close terminal</div>
+              <div class="output-line"></div>
+            </div>
+            <div class="terminal-input-line">
+              <span class="prompt">root@cybersecurity:~#</span>
+              <input type="text" class="terminal-input" id="terminal-input" placeholder="Enter command..." autocomplete="off">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hacking Progress Modal -->
+      <div id="hacking-modal" class="modal hacking-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog hacking-dialog">
+          <div class="modal-header hacking-header">
+            <h4 class="modal-title">🚀 System Initialization</h4>
+            <button class="btn small modal-close" aria-label="Close">✕</button>
+          </div>
+          <div class="modal-content hacking-content">
+            <div class="hacking-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" id="hacking-progress"></div>
+              </div>
+              <div class="progress-text" id="hacking-text">Initializing...</div>
+            </div>
+            <div class="hacking-logs" id="hacking-logs">
+              <div class="log-line">[INFO] Starting system initialization...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  </div>
+
+  <footer class="site-footer"><p>© 2025 Darshak — Cybersecurity</p></footer>
 
   <script src="js/main.js"></script>
   <script src="js/cyber.js"></script>

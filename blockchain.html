@@ -1,79 +1,333 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Blockchain — Darshak Kanani</title>
-  <meta name="description" content="Blockchain security and smart contract research by Darshak Kanani."/>
+  <meta name="description" content="Blockchain security research, smart contract auditing, and DeFi protocol analysis."/>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-bc blockchain-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav container">
-    <a class="brand" href="index.html">DK Darshak</a>
-    <button id="nav-toggle" class="hamburger"><span></span><span></span><span></span></button>
-    <nav id="primary-nav" class="primary-nav"><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cybersecurity.html">Cybersecurity</a></li>
-      <li><a href="ai.html">AI</a></li>
-      <li><a class="active" href="blockchain.html">Blockchain</a></li>
-      <li><a href="startups.html">Startups</a></li>
-    </ul></nav>
-    <div class="nav-actions"><input id="site-search" class="site-search" type="search"><button id="theme-toggle" class="btn small">🌙</button></div>
-  </div></header>
 
-  <main id="main">
-    <section id="bc-overview" class="section container">
-      <div class="section-header">
-        <h1>Blockchain Security</h1>
-        <p class="muted">Smart contract audits, wallet analysis and decentralized identity explorations.</p>
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo">DK</span><span class="brand-text">Darshak Kanani</span>
+      </a>
+
+      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a href="ai.html">AI</a></li>
+          <li><a class="active" href="blockchain.html">Blockchain</a></li>
+          <li><a href="startups.html">Startups</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <input id="site-search" class="site-search" type="search" placeholder="Search (press /)" aria-label="Search">
+        <button id="theme-toggle" class="btn small" title="Toggle theme" aria-pressed="false">🌙</button>
       </div>
+    </div>
+  </header>
 
-      <div class="grid grid-2">
-        <div>
-          <article class="panel mindmap" id="bc-mindmap">
-            <h3>Mind Map</h3>
-            <div class="map-canvas">
-              <div class="map-col">
-                <h4>Achievements</h4>
-                <ul><li>Solidity basics</li><li>Web3 security concepts</li></ul>
-              </div>
-              <div class="map-col">
-                <h4>Goals</h4>
-                <ul><li>Audit lab & POC</li><li>DID research</li></ul>
+  <div class="main-content">
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="blockchain-hero-section">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-in">
+            <span class="badge-icon">⛓️</span>
+            <span>Blockchain Security</span>
+          </div>
+          
+          <h1 class="hero-title animate-slide-up">
+            Securing the <span class="gradient-text">Decentralized</span><br>
+            Financial Future
+          </h1>
+          
+          <p class="hero-description animate-slide-up delay-1">
+            Comprehensive smart contract auditing, DeFi protocol analysis, and blockchain security 
+            research to protect decentralized applications and digital assets.
+          </p>
+          
+          <div class="hero-metrics animate-slide-up delay-2">
+            <div class="metric">
+              <div class="metric-number" data-count="25">0</div>
+              <div class="metric-label">Smart Contract Audits</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="12">0</div>
+              <div class="metric-label">DeFi Protocols</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="8">0</div>
+              <div class="metric-label">Security Tools</div>
+            </div>
+          </div>
+          
+          <div class="hero-actions animate-slide-up delay-3">
+            <a href="#blockchain-projects" class="btn-primary">
+              <span>View Audits</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <a href="#blockchain-research" class="btn-secondary">
+              <span>Research Notes</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="blockchain-projects" class="blockchain-projects-section">
+        <div class="section-header">
+          <h2 class="section-title">Blockchain Security Services</h2>
+          <p class="section-subtitle">Comprehensive security analysis for decentralized applications</p>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Smart Contract Auditing -->
+          <div class="project-card audit-card">
+            <div class="card-header">
+              <div class="card-icon audit-icon">🔍</div>
+              <div class="card-status">
+                <span class="status-badge active">Active Service</span>
               </div>
             </div>
-          </article>
-
-          <article class="panel">
-            <h3>Projects</h3>
-            <div class="cards">
-              <article class="card" tabindex="0"><h4>Smart Contract Audit (learning repo)</h4><p class="muted">Vulnerable contracts, tests and fixes.</p></article>
-              <article class="card" tabindex="0"><h4>Wallet Security Notes</h4><p class="muted">Threat models & best practice checklists.</p></article>
+            
+            <div class="card-content">
+              <h3 class="card-title">Smart Contract Auditing</h3>
+              <p class="card-description">
+                Comprehensive security analysis of Ethereum smart contracts and DeFi protocols 
+                using both automated tools and manual review processes.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">Vulnerability Assessment</div>
+                <div class="feature-tag">Code Review</div>
+                <div class="feature-tag">Gas Optimization</div>
+                <div class="feature-tag">Best Practices</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🐛</span>
+                  <span>Critical bug detection</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">📋</span>
+                  <span>Detailed audit reports</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🛡️</span>
+                  <span>Security recommendations</span>
+                </div>
+              </div>
             </div>
-          </article>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Request Audit</button>
+              <button class="btn-card secondary">Sample Reports</button>
+            </div>
+          </div>
+
+          <!-- DeFi Security -->
+          <div class="project-card defi-card">
+            <div class="card-header">
+              <div class="card-icon defi-icon">🏦</div>
+              <div class="card-status">
+                <span class="status-badge specialized">Specialized</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">DeFi Protocol Analysis</h3>
+              <p class="card-description">
+                Specialized security analysis for decentralized finance protocols including 
+                lending platforms, DEXs, and yield farming strategies.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">Flash Loan Analysis</div>
+                <div class="feature-tag">Oracle Security</div>
+                <div class="feature-tag">MEV Protection</div>
+                <div class="feature-tag">Economic Models</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">⚡</span>
+                  <span>Flash loan attack vectors</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔄</span>
+                  <span>Reentrancy protection</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">💰</span>
+                  <span>Economic security analysis</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">DeFi Analysis</button>
+              <button class="btn-card secondary">Case Studies</button>
+            </div>
+          </div>
+
+          <!-- Research & Tools -->
+          <div class="project-card research-card">
+            <div class="card-header">
+              <div class="card-icon research-icon">🔬</div>
+              <div class="card-status">
+                <span class="status-badge ongoing">Ongoing</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">Security Research & Tools</h3>
+              <p class="card-description">
+                Development of security tools and research into emerging blockchain 
+                technologies including Layer 2 solutions and zero-knowledge proofs.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">Slither</div>
+                <div class="feature-tag">Mythril</div>
+                <div class="feature-tag">Foundry</div>
+                <div class="feature-tag">Custom Tools</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🧪</span>
+                  <span>Automated testing frameworks</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔧</span>
+                  <span>Custom security tools</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">📚</span>
+                  <span>Security research papers</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">View Tools</button>
+              <button class="btn-card secondary">Research Papers</button>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <article class="panel timeline">
-            <h3>Roadmap</h3>
-            <ol>
-              <li>Q4 2025 — Publish audit lab</li>
-              <li>2026 — Research DID & AI+Blockchain POC</li>
-            </ol>
-          </article>
-
-          <article class="panel">
-            <h3>Learning Resources</h3>
-            <ul class="map-list"><li>OpenZeppelin, ConsenSys blog, security audits</li></ul>
-          </article>
+      <!-- Research Areas -->
+      <section id="blockchain-research" class="research-section">
+        <div class="section-header">
+          <h2 class="section-title">Research Focus Areas</h2>
+          <p class="section-subtitle">Cutting-edge blockchain security research</p>
         </div>
-      </div>
-    </section>
-  </main>
+        
+        <div class="research-grid">
+          <div class="research-item">
+            <div class="research-icon">⚡</div>
+            <div class="research-content">
+              <h3>Layer 2 Security</h3>
+              <p>Security analysis of rollups, sidechains, and scaling solutions including fraud and validity proofs</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">🌉</div>
+            <div class="research-content">
+              <h3>Cross-Chain Bridges</h3>
+              <p>Security models and failure modes of blockchain bridges and interoperability protocols</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">🧮</div>
+            <div class="research-content">
+              <h3>Zero-Knowledge Proofs</h3>
+              <p>Security implications and applications of zk-SNARKs and zk-STARKs in blockchain systems</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">🗳️</div>
+            <div class="research-content">
+              <h3>Consensus Security</h3>
+              <p>Analysis of Proof-of-Stake consensus mechanisms, validator security, and network safety</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — Blockchain</p></div></footer>
+      <!-- Audit Process -->
+      <section class="audit-process-section">
+        <div class="section-header">
+          <h2 class="section-title">Audit Process</h2>
+          <p class="section-subtitle">Comprehensive security analysis methodology</p>
+        </div>
+        
+        <div class="process-timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">📋</div>
+            <div class="timeline-content">
+              <h3>Initial Assessment</h3>
+              <p>Code review, architecture analysis, and threat modeling</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🔍</div>
+            <div class="timeline-content">
+              <h3>Automated Analysis</h3>
+              <p>Static analysis tools, fuzzing, and automated vulnerability detection</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">🧠</div>
+            <div class="timeline-content">
+              <h3>Manual Review</h3>
+              <p>Line-by-line code review and business logic verification</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-icon">📊</div>
+            <div class="timeline-content">
+              <h3>Report & Remediation</h3>
+              <p>Detailed findings report with remediation guidance and re-testing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Darshak Kanani — Securing Decentralized Finance</p>
+  </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/bc.js"></script>
+  <script src="js/blockchain.js"></script>
 </body>
 </html>

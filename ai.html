@@ -1,90 +1,289 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>AI — Darshak Kanani</title>
-  <meta name="description" content="AI projects and GAN POC by Darshak — adversarial ML and security applications."/>
+  <meta name="description" content="AI projects, research, and GAN-based security work by Darshak Kanani."/>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-ai ai-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="nav container">
-    <a class="brand" href="index.html">DK Darshak</a>
-    <button id="nav-toggle" class="hamburger"><span></span><span></span><span></span></button>
-    <nav id="primary-nav" class="primary-nav"><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cybersecurity.html">Cybersecurity</a></li>
-      <li><a class="active" href="ai.html">AI</a></li>
-      <li><a href="blockchain.html">Blockchain</a></li>
-      <li><a href="startups.html">Startups</a></li>
-    </ul></nav>
-    <div class="nav-actions"><input id="site-search" class="site-search" type="search"><button id="theme-toggle" class="btn small">🌙</button></div>
-  </div></header>
 
-  <main id="main">
-    <section id="ai-overview" class="section container">
-      <div class="section-header">
-        <h1>Artificial Intelligence</h1>
-        <p class="muted">Adversarial ML, GAN POC, anomaly detection, and AI-driven security tooling.</p>
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo">DK</span><span class="brand-text">Darshak Kanani</span>
+      </a>
+
+      <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cybersecurity.html">Cybersecurity</a></li>
+          <li><a class="active" href="ai.html">AI</a></li>
+          <li><a href="blockchain.html">Blockchain</a></li>
+          <li><a href="startups.html">Startups</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <input id="site-search" class="site-search" type="search" placeholder="Search (press /)" aria-label="Search">
+        <button id="theme-toggle" class="btn small" title="Toggle theme" aria-pressed="false">🌙</button>
       </div>
+    </div>
+  </header>
 
-      <div class="grid grid-2">
-        <div>
-          <article class="panel mindmap" id="ai-mindmap">
-            <h3>Mind Map — Achievements & Goals</h3>
-            <div class="map-canvas">
-              <div class="map-col">
-                <h4>Achievements</h4>
-                <ul>
-                  <li>GAN attacker/defender POC</li>
-                  <li>Python & ML foundations</li>
-                </ul>
-              </div>
-              <div class="map-col">
-                <h4>Goals</h4>
-                <ul>
-                  <li>Build AI-driven threat detection</li>
-                  <li>AI for personalized skincare</li>
-                </ul>
+  <div class="main-content">
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="ai-hero-section">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-in">
+            <span class="badge-icon">🤖</span>
+            <span>AI Research & Development</span>
+          </div>
+          
+          <h1 class="hero-title animate-slide-up">
+            Building <span class="gradient-text">Intelligent</span><br>
+            Security Systems
+          </h1>
+          
+          <p class="hero-description animate-slide-up delay-1">
+            Advancing the intersection of artificial intelligence and cybersecurity through 
+            cutting-edge research in GANs, adversarial ML, and intelligent threat detection.
+          </p>
+          
+          <div class="hero-metrics animate-slide-up delay-2">
+            <div class="metric">
+              <div class="metric-number" data-count="15">0</div>
+              <div class="metric-label">AI Models</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="8">0</div>
+              <div class="metric-label">Research Papers</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number" data-count="5">0</div>
+              <div class="metric-label">Open Source Tools</div>
+            </div>
+          </div>
+          
+          <div class="hero-actions animate-slide-up delay-3">
+            <a href="#ai-projects" class="btn-primary">
+              <span>Explore Projects</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+            <a href="#ai-research" class="btn-secondary">
+              <span>View Research</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="ai-projects" class="ai-projects-section">
+        <div class="section-header">
+          <h2 class="section-title">AI Projects & Research</h2>
+          <p class="section-subtitle">Innovative solutions at the intersection of AI and cybersecurity</p>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- GAN Security Research -->
+          <div class="project-card gan-card">
+            <div class="card-header">
+              <div class="card-icon gan-icon">🧠</div>
+              <div class="card-status">
+                <span class="status-badge research">Research</span>
               </div>
             </div>
-          </article>
-
-          <article class="panel">
-            <h3>Projects</h3>
-            <div class="cards">
-              <article class="card" tabindex="0">
-                <h4>GAN Security Simulator (POC)</h4>
-                <p>Attacker generator vs defender discriminator to produce realistic attack traces for detection tests.</p>
-              </article>
-
-              <article class="card" tabindex="0">
-                <h4>Anomaly Detection Lab</h4>
-                <p>Network-flow anomaly detection experiments with synthetic & public datasets.</p>
-              </article>
+            
+            <div class="card-content">
+              <h3 class="card-title">GAN Security Research</h3>
+              <p class="card-description">
+                Generative Adversarial Networks for cybersecurity applications including 
+                adversarial attack generation and defense mechanism development.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">cGAN</div>
+                <div class="feature-tag">WGAN-GP</div>
+                <div class="feature-tag">StyleGAN</div>
+                <div class="feature-tag">Diffusion Models</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">⚔️</span>
+                  <span>Adversarial attack generation</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🛡️</span>
+                  <span>Defense mechanism development</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🦠</span>
+                  <span>Malware detection evasion</span>
+                </div>
+              </div>
             </div>
-          </article>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">View Research</button>
+              <button class="btn-card secondary">Code Repository</button>
+            </div>
+          </div>
+
+          <!-- ML Security Systems -->
+          <div class="project-card ml-card">
+            <div class="card-header">
+              <div class="card-icon ml-icon">🔍</div>
+              <div class="card-status">
+                <span class="status-badge production">Production</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">ML Security Systems</h3>
+              <p class="card-description">
+                Production-grade machine learning systems for threat detection, 
+                anomaly analysis, and behavioral monitoring in enterprise environments.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">PyTorch</div>
+                <div class="feature-tag">TensorFlow</div>
+                <div class="feature-tag">scikit-learn</div>
+                <div class="feature-tag">XGBoost</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎯</span>
+                  <span>Real-time threat detection</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">📊</span>
+                  <span>Anomaly detection systems</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">👤</span>
+                  <span>User behavior analysis</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Live Demo</button>
+              <button class="btn-card secondary">Documentation</button>
+            </div>
+          </div>
+
+          <!-- Adversarial ML Research -->
+          <div class="project-card adversarial-card">
+            <div class="card-header">
+              <div class="card-icon adversarial-icon">⚡</div>
+              <div class="card-status">
+                <span class="status-badge ongoing">Ongoing</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <h3 class="card-title">Adversarial ML Research</h3>
+              <p class="card-description">
+                Exploring robustness in machine learning models through adversarial training, 
+                attack methodologies, and defense strategies for secure AI systems.
+              </p>
+              
+              <div class="card-features">
+                <div class="feature-tag">FGSM</div>
+                <div class="feature-tag">PGD</div>
+                <div class="feature-tag">C&W</div>
+                <div class="feature-tag">AutoAttack</div>
+              </div>
+              
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔬</span>
+                  <span>Robust training methods</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎭</span>
+                  <span>Evasion attack research</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔐</span>
+                  <span>Privacy-preserving ML</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-actions">
+              <button class="btn-card primary">Research Papers</button>
+              <button class="btn-card secondary">Experiments</button>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <article class="panel">
-            <h3>Certifications & Learning</h3>
-            <ul class="map-list">
-              <li>Courses: Deep Learning / Adversarial ML (to list)</li>
-              <li>Reading list: arXiv papers and tutorials</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h3>Research Notes</h3>
-            <p class="muted">Hypotheses, experiments, notebooks. Add links to your GitHub notebooks here.</p>
-          </article>
+      <!-- Research Areas -->
+      <section id="ai-research" class="research-section">
+        <div class="section-header">
+          <h2 class="section-title">Research Focus Areas</h2>
+          <p class="section-subtitle">Core areas of investigation and development</p>
         </div>
-      </div>
-    </section>
-  </main>
+        
+        <div class="research-grid">
+          <div class="research-item">
+            <div class="research-icon">🧪</div>
+            <div class="research-content">
+              <h3>Generative AI Security</h3>
+              <p>Investigating security implications of large language models and generative AI systems</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">🔒</div>
+            <div class="research-content">
+              <h3>Federated Learning</h3>
+              <p>Privacy-preserving machine learning across distributed systems and edge devices</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">🌐</div>
+            <div class="research-content">
+              <h3>Multi-modal AI</h3>
+              <p>Fusion of text, network telemetry, and behavioral data for comprehensive threat analysis</p>
+            </div>
+          </div>
+          
+          <div class="research-item">
+            <div class="research-icon">⚖️</div>
+            <div class="research-content">
+              <h3>AI Ethics & Fairness</h3>
+              <p>Ensuring responsible AI deployment in security-critical applications</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-  <footer class="site-footer"><div class="container"><p>© 2025 Darshak — AI Research</p></div></footer>
+  <footer class="site-footer">
+    <p>© 2025 Darshak Kanani — Advancing AI Security Research</p>
+  </footer>
 
   <script src="js/main.js"></script>
   <script src="js/ai.js"></script>
