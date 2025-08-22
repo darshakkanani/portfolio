@@ -21,14 +21,52 @@ if(themeToggle){
   });
 }
 
-/* Responsive nav */
+/* Enhanced Responsive Navigation */
 const navToggle = document.getElementById('nav-toggle');
 const primaryNav = document.getElementById('primary-nav');
+
 if(navToggle && primaryNav){
-  navToggle.addEventListener('click', () => {
+  // Toggle mobile menu
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
     primaryNav.classList.toggle('open');
+    
+    // Prevent body scroll when menu is open
+    if(!expanded) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if(!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+      primaryNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && primaryNav.classList.contains('open')) {
+      primaryNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      navToggle.focus();
+    }
+  });
+  
+  // Close menu when window is resized to desktop
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 768 && primaryNav.classList.contains('open')) {
+      primaryNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -90,19 +128,70 @@ if(search){
   });
 }
 
-/* Contact form minimal demo */
+/* Formspree Email Handler */
 const form = document.getElementById('contact-form');
 if(form){
   const status = document.getElementById('form-status');
-  form.addEventListener('submit', (e) => {
+  
+  // Email validation function
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = form.name.value.trim(), email = form.email.value.trim(), message = form.message.value.trim();
-    if(!name || !email || !message){ status.textContent = 'Please fill all fields.'; status.style.color = '#ffcc66'; return; }
-    status.textContent = 'Sending...';
-    setTimeout(()=>{ status.textContent = 'Message queued (client-side demo).'; status.style.color = '#8fe6a4'; form.reset(); }, 900);
+    
+    const formData = new FormData(form);
+    const name = formData.get('name')?.trim();
+    const email = formData.get('_replyto')?.trim();
+    const subject = formData.get('subject')?.trim();
+    const message = formData.get('message')?.trim();
+    
+    // Validation
+    if(!name || !email || !subject || !message) {
+      status.textContent = 'Please fill all required fields.';
+      status.style.color = '#ff6b6b';
+      return;
+    }
+    
+    if(!isValidEmail(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = '#ff6b6b';
+      return;
+    }
+    
+    status.textContent = 'Sending message...';
+    status.style.color = '#00d4ff';
+    
+    try {
+      // Send via Formspree
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if(response.ok) {
+        status.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+        status.style.color = '#4ade80';
+        form.reset();
+        
+        // Clear status after 5 seconds
+        setTimeout(() => {
+          status.textContent = '';
+        }, 5000);
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Email send error:', error);
+      status.textContent = 'Failed to send message. Please try again.';
+      status.style.color = '#ff6b6b';
+    }
   });
-  const mailBtn = document.getElementById('mailto-fallback');
-  if(mailBtn) mailBtn.addEventListener('click', ()=> location.href = `mailto:yourmail@example.com?subject=${encodeURIComponent('Contact from portfolio')}`);
 }
 
 /* Back to top */

@@ -72,7 +72,7 @@
           </div>
 
           <aside class="hero-right panel">
-            <img src="assets/images/avatar.jpg" alt="Darshak Kanani" class="avatar" loading="lazy">
+            <img src="assets/icons/icon.jpg" alt="Darshak Kanani" class="avatar" loading="lazy">
             <h3>Quick Links</h3>
             <ul class="quick-links">
               <li><a href="cybersecurity.html#cyber-overview">Cybersecurity</a></li>
@@ -83,8 +83,8 @@
 
             <hr>
             <h4>Contact</h4>
-            <p><a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
-            <p class="socials"><a href="https://github.com/yourusername" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></p>
+            <p><a href="mailto:darshakkanani444@gmail.com">darshakkanani444@gmail.com</a></p>
+            <p class="socials"><a href="https://github.com/darshakkanani" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/darshak_kanani" target="_blank">LinkedIn</a></p>
           </aside>
         </div>
       </section>
@@ -454,7 +454,9 @@
 
         <div class="contact-grid">
           <div class="contact-form-container">
-            <form id="contact-form" class="contact-form enhanced-form" novalidate>
+            <form id="contact-form" class="contact-form enhanced-form" name="contact" method="POST" netlify novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+              
               <div class="form-group">
                 <div class="form-row">
                   <label for="name">Full Name</label>
@@ -493,15 +495,6 @@
                     </svg>
                   </span>
                 </button>
-                <button id="mailto-fallback" class="btn-enhanced secondary" type="button">
-                  <span class="btn-text">Email Instead</span>
-                  <span class="btn-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                      <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                  </span>
-                </button>
               </div>
               <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
@@ -515,7 +508,7 @@
               </div>
               
               <div class="contact-methods">
-                <a href="mailto:yourmail@example.com" class="contact-method email">
+                <a href="mailto:darshakkanani444@gmail.com" class="contact-method email">
                   <div class="method-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -524,11 +517,11 @@
                   </div>
                   <div class="method-info">
                     <h4>Email</h4>
-                    <p>yourmail@example.com</p>
+                    <p>darshakkanani444@gmail.com</p>
                   </div>
                 </a>
 
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="contact-method linkedin">
+                <a href="https://linkedin.com/in/darshak_kanani" target="_blank" rel="noopener noreferrer" class="contact-method linkedin">
                   <div class="method-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
